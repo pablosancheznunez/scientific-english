@@ -175,7 +175,7 @@ local function zonas(el)
   local imagen, alt = el.attributes["imagen"] or "", el.attributes["alt"] or ""
   local zs = {}
   for _, it in ipairs(lista.content) do
-    local t = md(it):gsub("\\%[", "["):gsub("\\%]", "]")
+    local t = md(it):gsub("\\%[", "["):gsub("\\%]", "]"):gsub("\\|", "|")
     local x, y, w, h, resto = t:match("^%s*%[%s*([%d%.]+)%s*,%s*([%d%.]+)%s*,%s*([%d%.]+)%s*,%s*([%d%.]+)%s*%]%s*(.*)$")
     if x then
       local desc, marca, expl = resto:match("^(.-)%s*|%s*(%a+)%s*|%s*(.*)$")

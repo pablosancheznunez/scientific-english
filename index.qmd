@@ -12,7 +12,11 @@ It is written for doctoral students and researchers in any field, with particula
 ## How to cite this book
 > Sánchez-Núñez, P. (2026). *Scientific English for Researchers: Writing, reviewing and presenting research in English*. Universidad Carlos III de Madrid. Zenodo. <https://doi.org/10.5281/zenodo.24538351>
 
-**Author:** Pablo Sánchez-Núñez ([ORCID 0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506)), Universidad Carlos III de Madrid. Text licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+**Author:** Pablo Sánchez-Núñez, Universidad Carlos III de Madrid\
+**ORCID:** [0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506)\
+**Website:** [pablosancheznunez.com](https://pablosancheznunez.com)
+
+Text licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 :::
 
 ### Further reading {.unnumbered}

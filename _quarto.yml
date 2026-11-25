@@ -47,6 +47,7 @@ book:
     - 06-presenting.qmd
   appendices:
   - 90-phrasebank.qmd
+  - 94-laboratorio.qmd
   - 91-guia-docente.qmd
   - 92-glosario.qmd
 lang: en

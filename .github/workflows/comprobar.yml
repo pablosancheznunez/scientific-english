@@ -43,18 +43,18 @@ jobs:
         run: python herramientas/pruebas/ejercicios.py . 60 index.qmd
 
       - name: Preguntas de autoevaluación
-        run: python herramientas/pruebas/autoevaluacion.py _book index.html 01-structure.html 02-clarity.html 03-stance.html 04-errors.html 05-review.html 06-presenting.html 90-phrasebank.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/autoevaluacion.py _book index.html 01-structure.html 02-clarity.html 03-stance.html 04-errors.html 05-review.html 06-presenting.html 90-phrasebank.html 94-laboratorio.html 91-guia-docente.html 92-glosario.html
 
       - name: Accesibilidad (axe-core, WCAG 2.1 AA)
         env:
           AXE_JS: node_modules/axe-core/axe.min.js
-        run: python herramientas/pruebas/accesibilidad.py _book index.html 01-structure.html 02-clarity.html 03-stance.html 04-errors.html 05-review.html 06-presenting.html 90-phrasebank.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/accesibilidad.py _book index.html 01-structure.html 02-clarity.html 03-stance.html 04-errors.html 05-review.html 06-presenting.html 90-phrasebank.html 94-laboratorio.html 91-guia-docente.html 92-glosario.html
 
       - name: Accesibilidad en modo oscuro
         env:
           AXE_JS: node_modules/axe-core/axe.min.js
           MODO: oscuro
-        run: python herramientas/pruebas/accesibilidad.py _book index.html 01-structure.html 02-clarity.html 03-stance.html 04-errors.html 05-review.html 06-presenting.html 90-phrasebank.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/accesibilidad.py _book index.html 01-structure.html 02-clarity.html 03-stance.html 04-errors.html 05-review.html 06-presenting.html 90-phrasebank.html 94-laboratorio.html 91-guia-docente.html 92-glosario.html
 
       - uses: actions/upload-artifact@v4
         if: always()

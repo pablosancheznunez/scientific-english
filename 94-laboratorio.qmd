@@ -1,0 +1,65 @@
+---
+engine: markdown
+---
+
+# Interactive lab {#sec-laboratorio}
+
+This appendix brings together a lab and an activity to practise in your browser.
+
+## Lab: abstract moves {#lab-moves}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Lab · runs in your browser
+:::
+
+A good abstract moves through **five rhetorical moves** (Hyland, 2000): introduction, purpose, method, product (results) and conclusion. Paste your abstract. The lab tags each sentence with its most likely move using signal phrases, flags long sentences and lists the moves it could not find. It is a heuristic guide, not a judgement.
+
+```{ojs}
+//| echo: false
+areaE = window.Lab.area
+viewof abstractTxt = areaE("Your abstract", {rows: 9, value: "Open research data are increasingly required by funders. However, little is known about how researchers in the humanities reuse shared data. This study aims to identify the main barriers to data reuse among humanities scholars. We surveyed 412 researchers in Spain and analysed their responses using latent class analysis. We found that 63% had never reused data and that the lack of documentation was the most frequent barrier. These findings suggest that data policies should invest in documentation and training rather than in mandates alone."})
+```
+
+```{ojs}
+//| echo: false
+{
+  const frases = abstractTxt.replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s+(?=[A-Z])/).filter((s) => s.length > 2);
+  const reglas = [
+    ["Conclusion", "#6a3d9a", /\b(suggest|conclude|implications?|imply|recommend|should|these (findings|results)|overall|in conclusion)\b/i],
+    ["Product", "#1c6b3a", /\b(we found|results? (show|indicate|reveal)|found that|showed|revealed|was associated|were associated|significantly|\d+(\.\d+)?\s?%|p\s?[<=])/i],
+    ["Method", "#b35900", /\b(we (surveyed|analysed|analyzed|used|conducted|collected|interviewed|measured|compared|applied|performed)|using|data (from|were)|sample of|participants|questionnaire|regression|analysis)\b/i],
+    ["Purpose", "#2a78d6", /\b(this (study|paper|article)|we (aim|investigate|examine|explore|propose|present)|aims? to|the (aim|purpose|goal) of|here,? we)\b/i],
+    ["Introduction", "#52514e", /\b(however|little is known|remains? (unclear|unknown)|increasingly|has been|have been|is (a|an|the)|are (a|an)|growing)\b/i]];
+  const etiqueta = (s) => { for (const [m, c, re] of reglas) if (re.test(s)) return [m, c]; return ["Unclear", "#8a8a8a"]; };
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c]));
+  const tags = frases.map((s) => [s, ...etiqueta(s), s.split(/\s+/).length]);
+  const total = abstractTxt.trim() ? abstractTxt.trim().split(/\s+/).length : 0;
+  const orden = ["Introduction", "Purpose", "Method", "Product", "Conclusion"];
+  const faltan = orden.filter((m) => !tags.some((t) => t[1] === m));
+  const d = html`<div role="status" aria-live="polite"></div>`;
+  d.innerHTML = `<ol class="list-unstyled">${tags.map(([s, m, c, n]) => `<li class="mb-1"><span class="badge" style="background:${c};color:#fff;min-width:7.5em">${m}</span> ${esc(s)} ${n > 30 ? `<span class="small text-danger">⚠ ${n} words: consider splitting</span>` : ""}</li>`).join("")}</ol>
+  <p><strong>${total} words</strong> ${total > 250 ? "· ⚠ over 250: most journals will ask you to cut it" : total < 100 ? "· quite short: check that every move is there" : "· a typical length (100–250)"}.</p>
+  <p>${faltan.length ? `Moves not detected: <strong>${faltan.join(", ")}</strong>. Check whether they are missing or just phrased without the usual signals.` : "All five moves detected. Check that they appear in a logical order."}</p>`;
+  return d;
+}
+```
+:::
+
+## Activity: order the moves
+
+::: {.ordenar #ia-lab-moves titulo="Put these abstract sentences in the usual order"}
+1. Citation counts are widely used to evaluate research, yet they ignore how research is used outside academia.
+2. This study examines whether policy citations capture a different kind of impact.
+3. We matched 15,000 articles with mentions in policy documents and compared both indicators.
+4. Policy citations were only weakly correlated with academic citations.
+5. Evaluation frameworks should therefore combine both indicators rather than rely on citations alone.
+
+The sequence goes from context and gap (introduction) to aim (purpose), how it was done (method), what was found (product) and what it means (conclusion).
+:::
+
+## Watch and keep learning
+
+These are links, not embeds: the video opens on the provider's site.
+
+- **[Writing in the Sciences](https://www.coursera.org/learn/sciwrite)** — Kristin Sainani · Stanford University (Coursera). A video course on clear scientific writing: cutting clutter, sentence and paragraph structure, the writing process and the parts of a manuscript. Free to audit.

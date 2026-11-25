@@ -38,6 +38,7 @@ ficha = f"""
 ::: {{.callout-note title="{tr('Ficha del libro', 'About this book')}"}}
 - **{tr("Autor", "Author")}:** {autor0["name"]}
 - **ORCID:** [https://orcid.org/{autor0["orcid"]}](https://orcid.org/{autor0["orcid"]})
+- **{"Author website" if CFG.get("idioma") == "en" else "Web del autor"}:** [https://pablosancheznunez.com](https://pablosancheznunez.com)
 - **{tr("Afiliación", "Affiliation")}:** {autor0["affiliation"]}
 {linea_doi}- **{tr("Licencia", "Licence")}:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/{tr("deed.es", "")})
 - **{tr("Versión web interactiva", "Interactive web version")}:** <{WEB}>
@@ -134,6 +135,7 @@ def portada(destino):
     fig.text(0.08, 0.235, "Pablo Sánchez-Núñez", color="white", fontsize=22, fontweight="bold")
     fig.text(0.08, 0.11, "Universidad Carlos III de Madrid", color="#c9d2ff", fontsize=15)
     fig.text(0.08, 0.205, "ORCID 0000-0001-7845-9506", color="#c9d2ff", fontsize=13)
+    fig.text(0.08, 0.175, "pablosancheznunez.com", color="#c9d2ff", fontsize=13)
     fig.text(0.08, 0.06, ("DOI " + str(libro["doi"]) + " · " if libro.get("doi") else "") + "CC BY 4.0", color="#c9d2ff", fontsize=12)
     fig.savefig(destino, facecolor=fig.get_facecolor())
     plt.close(fig)

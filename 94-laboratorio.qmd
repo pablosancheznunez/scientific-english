@@ -58,6 +58,85 @@ viewof abstractTxt = areaE("Your abstract", {rows: 9, value: "Open research data
 The sequence goes from context and gap (introduction) to aim (purpose), how it was done (method), what was found (product) and what it means (conclusion).
 :::
 
+## Lab: response to reviewers {#lab-response}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Lab · runs in your browser
+:::
+
+A good response letter quotes each comment, thanks the reviewer briefly, says **what you changed** and **where**, and disagrees politely with evidence when needed. Fill in one comment and copy the formatted reply.
+
+```{ojs}
+//| echo: false
+{
+  const raiz = html`<div class="resp-lab"></div>`;
+  const campo = (id, et, val, area) => { const d = html`<div class="mb-2"><label class="form-label" for="${id}">${et}</label>${area ? `<textarea id="${id}" class="form-control form-control-sm" rows="3">${val}</textarea>` : `<input id="${id}" class="form-control form-control-sm" value="${val}">`}</div>`; raiz.append(d); return d.querySelector("input, textarea"); };
+  const com = campo("rr-com", "Reviewer comment", "The sample size seems small and the authors do not justify it.", true);
+  const acc = html`<div class="mb-2"><label class="form-label" for="rr-acc">Your decision</label><select id="rr-acc" class="form-select form-select-sm"><option>We agree and have changed the manuscript</option><option>We partly agree</option><option>We respectfully disagree</option></select></div>`; raiz.append(acc);
+  const cam = campo("rr-cam", "What you did (or your evidence)", "We added a power analysis showing that 120 participants give 80% power to detect d = 0.5, and we discuss this limitation.", true);
+  const loc = campo("rr-loc", "Where (section, page, lines)", "Methods, p. 7, lines 142-150");
+  const salida = html`<div role="status" aria-live="polite"></div>`;
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c]));
+  function act() {
+    const dec = acc.querySelector("select").value;
+    const inicio = dec.startsWith("We agree") ? "Thank you for this helpful comment. We agree," : dec.startsWith("We partly") ? "Thank you for raising this point. We agree in part:" : "We thank the reviewer for this comment. We have considered it carefully, but we respectfully disagree, because";
+    const cuerpo = cam.value.trim().replace(/^we /i, "we ");
+    const texto = `**Comment 1.** "${com.value.trim()}"\n\n**Response.** ${inicio} ${cuerpo.charAt(0).toLowerCase() + cuerpo.slice(1)}${loc.value.trim() ? ` (${loc.value.trim()})` : ""}`;
+    const avisos = [];
+    if (/\b(wrong|misunderstood|clearly|obviously|failed to|did not read)\b/i.test(cam.value)) avisos.push("Your reply contains words that may sound defensive (wrong, clearly, obviously…). Rephrase neutrally.");
+    if (!loc.value.trim() && !dec.includes("disagree")) avisos.push("Say where the change is (section, page, lines): editors check it.");
+    if (cam.value.trim().split(/\s+/).length < 8) avisos.push("The reply is very short: explain what you changed or why you disagree.");
+    if (dec.includes("disagree") && !/\b(because|evidence|data|study|studies|shown|show)\b/i.test(cam.value)) avisos.push("When you disagree, support it with evidence (data, references).");
+    salida.innerHTML = `<div class="p-3 border rounded"><p class="mb-1"><strong>Comment 1.</strong> “${esc(com.value.trim())}”</p><p class="mb-0"><strong>Response.</strong> ${esc(texto.split("**Response.** ")[1])}</p></div>${avisos.length ? `<ul class="mt-2">${avisos.map((a) => `<li>⚠ ${a}</li>`).join("")}</ul>` : '<p class="small mt-2">✓ Clear, polite and located.</p>'}<button type="button" class="btn btn-outline-primary btn-sm">Copy as Markdown</button> <span class="small"></span>`;
+    salida.querySelector("button").onclick = () => navigator.clipboard?.writeText(texto).then(() => salida.querySelector("span").textContent = "Copied.", () => salida.querySelector("span").textContent = "Copy failed: select the text manually.");
+  }
+  raiz.addEventListener("input", act); raiz.append(salida); act();
+  return raiz;
+}
+```
+:::
+
+## Lab: cover letter {#lab-cover}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Lab · runs in your browser
+:::
+
+Editors read the cover letter in a minute. It should say what you found, why it matters **for this journal** and confirm the required declarations. Fill in the fields and download the draft.
+
+```{ojs}
+//| echo: false
+{
+  const raiz = html`<div class="cover-lab"></div>`;
+  const campo = (id, et, val) => { const d = html`<div class="mb-2"><label class="form-label" for="${id}">${et}</label><input id="${id}" class="form-control form-control-sm" value="${val}"></div>`; raiz.append(d); return d.querySelector("input"); };
+  const ed = campo("cl-ed", "Editor's name (if known)", "Dr Smith");
+  const rev = campo("cl-rev", "Journal", "Quantitative Science Studies");
+  const tit = campo("cl-tit", "Manuscript title", "Policy citations capture a different kind of research impact");
+  const tipo = campo("cl-tipo", "Article type", "Research article");
+  const hall = campo("cl-hall", "Main finding (one sentence)", "policy citations are only weakly correlated with academic citations across 15,000 articles");
+  const enc = campo("cl-enc", "Why it fits this journal", "it addresses research evaluation indicators, a central topic of the journal");
+  const decl = html`<fieldset class="mb-2"><legend class="form-label">Declarations</legend>${["The manuscript is not under consideration elsewhere", "All authors approved the submission", "There are no competing interests", "Data and code are openly available"].map((x, i) => `<div class="form-check"><input class="form-check-input" type="checkbox" id="cl-d${i}" checked><label class="form-check-label" for="cl-d${i}">${x}</label></div>`).join("")}</fieldset>`;
+  raiz.append(decl);
+  const salida = html`<div role="status" aria-live="polite"></div>`;
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c]));
+  function act() {
+    const ds = [...decl.querySelectorAll("input")].filter((x) => x.checked).map((x) => x.nextElementSibling.textContent);
+    const carta = `Dear ${ed.value.trim() || "Editor"},\n\nPlease consider our manuscript "${tit.value.trim()}" for publication as a ${tipo.value.trim().toLowerCase()} in ${rev.value.trim()}.\n\nWe show that ${hall.value.trim()}. We believe the manuscript is a good fit for ${rev.value.trim()} because ${enc.value.trim()}.\n\n${ds.map((x) => x + ".").join(" ")}\n\nThank you for your consideration.\n\nYours sincerely,\n[Name, affiliation, ORCID]`;
+    const n = carta.split(/\s+/).length;
+    const url = URL.createObjectURL(new Blob([carta], {type: "text/plain"}));
+    const avisos = [];
+    if (!/\d/.test(hall.value)) avisos.push("Add a number to the main finding: concrete results catch the editor's attention.");
+    if (ds.length < 2) avisos.push("Most journals require you to confirm originality and author approval.");
+    salida.innerHTML = `<pre class="p-3 border rounded" style="white-space:pre-wrap">${esc(carta)}</pre><p class="small">${n} words${n > 250 ? " · consider shortening: one screen is enough" : ""}.</p>${avisos.length ? `<ul>${avisos.map((a) => `<li>⚠ ${a}</li>`).join("")}</ul>` : ""}<a class="btn btn-outline-primary btn-sm" download="cover-letter.txt" href="${url}">Download (.txt)</a>`;
+  }
+  raiz.addEventListener("input", act); raiz.append(salida); act();
+  return raiz;
+}
+```
+:::
+
 ## Watch and keep learning
 
 These are links, not embeds: the video opens on the provider's site.

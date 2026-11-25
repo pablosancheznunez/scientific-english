@@ -66,6 +66,36 @@ Mark the stress in your script, record yourself and listen.
 
 Prepare a 30-second **elevator pitch**: who you are, what you study and why it matters, in plain words. Ask questions about the other person's work, follow up by email within a week, and remember that coffee breaks are where many collaborations start.
 
+## Worked example
+
+::: {.callout-note appearance="simple" icon="false"}
+## Script and signposting for a five-minute talk
+**Opening:** "Imagine starting a PhD with 1,200 other students. Five years later, one in three has left. Today I'd like to show you why."
+
+**Outline:** "First, I'll explain how we followed these students. Then I'll show what predicted who stayed. Finally, I'll suggest what programmes can do."
+
+**Transitions:** "So that's how we collected the data. Let's move on to what we found." / "This brings me to the main result."
+
+**Conclusion:** "To sum up: supervision matters more than money. The main take-home message is that programmes should train supervisors."
+
+**Questions:** "Thank you. I'd be happy to take any questions." 
+:::
+
+## Graded exercises
+
+**Basic.** Choose the right phrase to move from methods to results.
+
+::: {.webex-solution boton="Show solution"}
+For example: "Let's move on to the results." or "So what did we find?"
+:::
+
+**Advanced.** Write the full signposted script of a five-minute talk on your research, mark the stressed syllables of ten key words and record yourself.
+
+::: {.webex-solution boton="Show solution"}
+Check that every section has an explicit transition, that the main message is stated at the start and at the end, and compare the recording with the script for stress and pace.
+:::
+
+
 ## Activities
 
 ::: {.clasificar #ia-e6-function titulo="What is the function of each phrase?" categorias="Moving on|Pointing to a visual|Concluding|Asking for clarification"}

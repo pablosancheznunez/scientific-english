@@ -67,6 +67,34 @@ Noble (2017) offers rules that turn a stressful task into a manageable one. The 
 
 Short, with a clear subject line and the request in the first two sentences. Formal openings (*Dear Professor García,*), a polite request (*Would you be able to…? I would be grateful if…*) and a closing (*Best regards, / Kind regards,*). Avoid Spanish calques such as *I write you to…* (→ *I am writing to…*) and *Waiting for your answer* (→ *I look forward to hearing from you*).
 
+## Worked example
+
+::: {.callout-note appearance="simple" icon="false"}
+## Answering three reviewer comments
+**Comment 1:** "The sample is not representative." → *We agree that the sample is not representative of all doctoral students. We now describe its composition in detail (p. 6) and have restricted our conclusions to public universities (p. 18).*
+
+**Comment 2:** "Please add a reference to Smith (2019)." → *We thank the reviewer. We have added this reference and discuss how our results compare (p. 15, lines 320-326).*
+
+**Comment 3:** "The authors should use a multilevel model." → *We agree that the data are nested. We have re-run the analysis with a multilevel model (students within universities). The results are very similar (Table S3), and we report them in the supplement.*
+
+Each response: thanks or acknowledgement, what was done, where.
+:::
+
+## Graded exercises
+
+**Basic.** Rewrite politely: "We do not agree with this comment because it is wrong."
+
+::: {.webex-solution boton="Show solution"}
+"We respectfully disagree with this point, because (give your evidence). We have nevertheless clarified the text to avoid this interpretation (p. 9)."
+:::
+
+**Advanced.** Write a complete response letter to the reviews of one of your papers (or to an invented set of five comments).
+
+::: {.webex-solution boton="Show solution"}
+Follow Noble (2017): overview, every comment quoted, polite responses, changes with page and line numbers, and reasoned disagreement where appropriate.
+:::
+
+
 ## Activities
 
 ::: {.clasificar #ia-e5-tone titulo="Appropriate tone for a response to reviewers?" categorias="Appropriate|Inappropriate"}

@@ -96,6 +96,35 @@ viewof parrafo = area("Your text", {rows: 7, submit: "Analyse", value: "In order
 ```
 :::
 
+## Worked example
+
+::: {.callout-note appearance="simple" icon="false"}
+## Editing a paragraph step by step
+**Original (52 words):** "The implementation of an evaluation of the effectiveness of the mentoring programme was carried out by the research team, and it was found that there was a significant reduction in the level of anxiety of the participants due to the fact that they had access to regular meetings."
+
+1. Find the real action: *evaluate*. Make it a verb with a subject: *We evaluated…*
+2. Replace wordy phrases: *due to the fact that* → *because*.
+3. Turn nominalisations into verbs: *a reduction in the level of anxiety* → *anxiety fell*.
+4. Put new information at the end: *…because they met their mentors regularly*.
+
+**Edited (20 words):** "We evaluated the mentoring programme and found that participants' anxiety fell significantly, probably because they met their mentors regularly." 
+:::
+
+## Graded exercises
+
+**Basic.** Rewrite: "An increase in the number of citations was observed."
+
+::: {.webex-solution boton="Show solution"}
+"Citations increased." or, with an agent, "We observed that citations increased."
+:::
+
+**Advanced.** Edit a paragraph of your own writing with the four steps of the case and compare the readability scores before and after in the lab.
+
+::: {.webex-solution boton="Show solution"}
+Report the word count and the score before and after, and explain each change. Check that no technical precision was lost.
+:::
+
+
 ## Activities
 
 ::: {.clasificar #ia-e2-better titulo="Which version is clearer?" categorias="Clearer|Less clear"}

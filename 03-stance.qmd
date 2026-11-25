@@ -84,6 +84,34 @@ viewof texto_h = area("Your text", {rows: 6, submit: "Analyse", value: "Our resu
 ```
 :::
 
+## Worked example
+
+::: {.callout-note appearance="simple" icon="false"}
+## Calibrating a discussion paragraph
+**Original:** "Our results prove that mentoring causes better completion rates and clearly demonstrate that all universities must implement mentoring programmes."
+
+Evidence: one observational cohort study in one country.
+
+**Calibrated:** "Our results suggest that mentoring is associated with higher completion rates. Because the study was observational, we cannot rule out that more motivated students sought mentors. If confirmed in experimental studies, these findings would support investing in mentoring programmes."
+
+Changes: *prove* → *suggest*; *causes* → *is associated with*; the alternative explanation is stated; the recommendation becomes conditional.
+:::
+
+## Graded exercises
+
+**Basic.** Replace the booster in: "This method undoubtedly outperforms all previous approaches."
+
+::: {.webex-solution boton="Show solution"}
+For example: "In our tests, this method outperformed the three approaches we compared it with." It states the evidence instead of asserting certainty.
+:::
+
+**Advanced.** Take the conclusions of a paper in your field and rewrite them so that each claim matches the strength of its evidence.
+
+::: {.webex-solution boton="Show solution"}
+Identify the design of each piece of evidence (experimental, observational, replicated) and choose verbs accordingly; add limitations where the evidence is indirect.
+:::
+
+
 ## Activities
 
 ::: {.clasificar #ia-e3-type titulo="Hedge or booster?" categorias="Hedge|Booster"}

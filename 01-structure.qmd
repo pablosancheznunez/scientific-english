@@ -62,6 +62,33 @@ Example:
 
 Many journals ask for a **structured abstract** (Background, Methods, Results, Conclusions). Even when they do not, a good abstract follows the same moves in 150-250 words: context and gap, aim, methods, main results **with numbers**, and the main conclusion. Avoid references, undefined abbreviations and vague promises such as "results are discussed".
 
+## Worked example
+
+::: {.callout-note appearance="simple" icon="false"}
+## From a vague abstract to a structured one
+**Before:** "This paper studies doctoral supervision. Data were collected and analysed. Several interesting results were found, which are discussed in relation to the literature."
+
+**After:**
+> *Background:* About one in three doctoral students leave before completing. *Aim:* We examined whether supervision quality predicts completion better than funding. *Methods:* We followed 1,200 doctoral students at 14 Spanish universities for five years. *Results:* Students reporting high-quality supervision were half as likely to drop out (hazard ratio 0.51, 95% CI 0.40–0.65); funding had a smaller effect. *Conclusions:* Doctoral programmes should invest in supervisor training as well as funding.
+
+The second version states the gap, the method, numbers and a conclusion a reader can act on.
+:::
+
+## Graded exercises
+
+**Basic.** Which CARS move is missing from this introduction: "Open data is important. Here, we survey 500 researchers about their data-sharing practices."?
+
+::: {.webex-solution boton="Show solution"}
+Move 2, establishing a niche: there is no gap or problem that justifies the survey (for example, "However, little is known about…").
+:::
+
+**Advanced.** Rewrite the abstract of one of your papers as a structured abstract of no more than 250 words, with numbers in the results.
+
+::: {.webex-solution boton="Show solution"}
+Check that each part answers its question (why, what, how, what was found, so what) and that the results include effect sizes or key figures, not only directions.
+:::
+
+
 ## Activities
 
 ::: {.ordenar #ia-e1-cars titulo="Put the introduction moves in order"}

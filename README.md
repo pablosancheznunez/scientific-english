@@ -9,7 +9,7 @@ Open, interactive book for doctoral students and researchers, especially Spanish
 
 ## Citation
 
-Sánchez-Núñez, P. (2026). *Scientific English for Researchers: Writing, reviewing and presenting research in English*. Universidad Carlos III de Madrid. Zenodo.
+Sánchez-Núñez, P. (2026). *Scientific English for Researchers: Writing, reviewing and presenting research in English*. Universidad Carlos III de Madrid. Zenodo. <https://doi.org/10.5281/zenodo.24538351>
 
 ## Licence
 

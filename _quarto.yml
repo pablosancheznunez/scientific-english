@@ -21,6 +21,7 @@ book:
   date-format: D MMMM YYYY
   language: en
   site-url: https://pablosancheznunez.com/scientific-english/
+  doi: 10.5281/zenodo.24538351
   search: true
   page-navigation: true
   sidebar:

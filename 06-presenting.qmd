@@ -1,0 +1,124 @@
+---
+engine: markdown
+---
+
+# Chapter 6. Presenting and networking {#sec-cap6}
+
+::: {.callout-note appearance="default"}
+## Objectives
+- Structure a conference talk in English with clear signposting.
+- Handle questions and discussion with useful phrases and strategies.
+- Network and hold informal academic conversations with confidence.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Chapter glossary
+[Signposting](92-glosario.qmd#gl-signposting) · [Word stress](92-glosario.qmd#gl-wordstress) · [Elevator pitch](92-glosario.qmd#gl-pitch) · [Clarification request](92-glosario.qmd#gl-clarification) · [Linguistic inequality](92-glosario.qmd#gl-inequality)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Downloads
+[Assignment template (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+:::
+
+## Required reading
+
+::: {.lectura}
+Amano, T.; Ramírez-Castañeda, V.; Berdejo-Espinola, V.; Borokini, I.; Chowdhury, S.; Golivets, M. et al. (2023). [The manifold costs of being a non-native English speaker in science](https://doi.org/10.1371/journal.pbio.3002184). *PLOS Biology*, 21(7), e3002184.
+:::
+
+## 1. Speaking at conferences as a non-native speaker
+
+Amano et al. (2023) found that non-native English speakers reported spending more time preparing oral presentations and that many avoided attending or presenting at international conferences because of language. Knowing this is useful in two ways: preparation pays off, and the difficulty is shared by most of your audience. International audiences value **clarity** far more than a native accent.
+
+## 2. Signposting
+
+**Signposting** language tells the audience where they are in the talk. It is even more important in a second language, for you and for listeners.
+
+| Function | Phrases |
+|---|---|
+| Opening | *Today I'm going to talk about… / The question I want to address is…* |
+| Outline | *First, I'll… Then… Finally…* |
+| Moving on | *Let's move on to… / That brings me to…* |
+| Pointing to a visual | *As you can see in this graph… / The key thing here is…* |
+| Emphasising | *What's really important is… / I'd like to stress that…* |
+| Concluding | *To sum up… / The main take-home message is…* |
+| Inviting questions | *I'd be happy to take any questions.* |
+
+## 3. Pronunciation that matters
+
+Intelligibility depends more on **word stress** and **sentence stress** than on individual sounds. Common problems for Spanish speakers:
+
+- Word stress in academic words: *anaLYsis, ANalyse, deVELop, DAta* or *DAHta*, *preSENT* (verb) vs *PREsent* (noun), *PHOtograph, phoTOgraphy*.
+- Initial *s* + consonant: *study, Spain, specific* (not *estudy*).
+- Final consonants and *-ed* endings: *analysed* (/d/), *tested* (/ɪd/), *worked* (/t/).
+
+Mark the stress in your script, record yourself and listen.
+
+## 4. Questions and discussion
+
+- Ask for clarification: *Sorry, could you repeat the question? / Do you mean…?*
+- Buy time: *That's a good question. Let me think…*
+- Admit limits: *I'm not sure, but my guess would be… / That's beyond the scope of this study, but…*
+- Redirect politely: *That's an interesting point; perhaps we could discuss it after the session.*
+
+## 5. Networking
+
+Prepare a 30-second **elevator pitch**: who you are, what you study and why it matters, in plain words. Ask questions about the other person's work, follow up by email within a week, and remember that coffee breaks are where many collaborations start.
+
+## Activities
+
+::: {.clasificar #ia-e6-function titulo="What is the function of each phrase?" categorias="Moving on|Pointing to a visual|Concluding|Asking for clarification"}
+- "That brings me to my second point." → Moving on
+- "As you can see in this figure, completion rates drop after year three." → Pointing to a visual
+- "The main take-home message is that supervision matters." → Concluding
+- "Sorry, do you mean the sample or the population?" → Asking for clarification
+:::
+
+::: {.clasificar #ia-e6-stress titulo="Where is the main stress?" categorias="First syllable|Second syllable|Third syllable"}
+- ANalyse → First syllable
+- aNALysis → Second syllable
+- deVELop → Second syllable
+- phoTOgraphy → Second syllable
+- PREsent (noun) → First syllable
+- psychoLOgical (psy-cho-LO-gi-cal) → Third syllable
+:::
+
+## Assignment {#reto-e6}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Challenge for chapter 6 · A five-minute talk in English
+1. Prepare a five-minute talk on your research with explicit signposting at every transition.
+2. Mark the word stress of ten key terms and record yourself; listen and correct.
+3. Prepare answers to the three questions you are most likely to be asked, and a 30-second elevator pitch.
+
+**Submission:** use the [assignment template](plantillas/entrega_reto.qmd). This challenge **has no solution in the book**.
+:::
+
+## Self-assessment
+
+Answer all the questions and press **Show answers**. It does not count towards your grade.
+
+::: {.webex-check .webex-box}
+1. Amano et al. (2023) found that non-native speakers spend more time preparing presentations. {{< torf true >}}
+2. Phrases that tell the audience where they are in the talk are called {{< fitb "signposting" ignorecase=true >}}
+3. For intelligibility, the most important feature is {{< mcq "a native accent" "*word and sentence stress" "speaking fast" >}}
+4. "Analysis" is stressed on the {{< mcq "first" "*second" "third" >}} syllable
+5. Saying "I'm not sure, but my guess would be…" is an acceptable way to answer. {{< torf true >}}
+6. A 30-second summary of who you are and what you study is an elevator {{< fitb "pitch" ignorecase=true >}}
+7. "Estudy" is the correct pronunciation of "study". {{< torf false >}}
+8. What do international audiences value most?
+
+{{< longmcq "A perfect native accent" "*Clarity" "Long, complex sentences" >}}
+:::
+
+::: {.webex-solution boton="Show explanations"}
+- And to avoid some conferences.
+- For you and the audience.
+- Stress carries meaning.
+- a-NAL-y-sis.
+- Honesty builds credibility.
+- Prepare it in advance.
+- Initial s + consonant.
+- Most of the audience are non-native too.
+:::

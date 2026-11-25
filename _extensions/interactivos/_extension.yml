@@ -1,0 +1,7 @@
+title: Interactivos
+author: Pablo Sánchez-Núñez
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  filters:
+    - interactivos.lua

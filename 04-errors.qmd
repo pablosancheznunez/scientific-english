@@ -1,0 +1,161 @@
+---
+engine: markdown
+---
+
+# Chapter 4. Common errors and false friends {#sec-cap4}
+
+::: {.callout-note appearance="default"}
+## Objectives
+- Avoid the most frequent errors of Spanish speakers in academic English.
+- Recognise false friends and uncountable nouns used in research.
+- Build your academic vocabulary with the Academic Word List.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Chapter glossary
+[False friend](92-glosario.qmd#gl-falsefriend) · [Uncountable noun](92-glosario.qmd#gl-uncountable) · [Academic Word List](92-glosario.qmd#gl-awl) · [Collocation](92-glosario.qmd#gl-collocation) · [Calque](92-glosario.qmd#gl-calque)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Downloads
+[Assignment template (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+:::
+
+## Required reading
+
+::: {.lectura}
+Coxhead, A. (2000). [A new academic word list](https://doi.org/10.2307/3587951). *TESOL Quarterly*, 34(2), 213-238.
+:::
+
+## 1. False friends
+
+**False friends** look like Spanish words but mean something different. Some appear constantly in research writing:
+
+| English word | Actually means | For the Spanish meaning, use |
+|---|---|---|
+| **actual** | real | *current* (actual) |
+| **actually** | in fact | *currently* (actualmente) |
+| **eventually** | in the end, finally | *possibly, occasionally* (eventualmente) |
+| **sensible** | reasonable | *sensitive* (sensible) |
+| **assist** | help | *attend* (asistir a) |
+| **pretend** | act as if | *intend, aim* (pretender) |
+| **contrast** (verb) | compare to show differences | *test, check* (contrastar hipótesis) |
+| **realise** | become aware | *carry out, conduct* (realizar) |
+| **argument** | line of reasoning | *plot* (argumento de una película) |
+| **formation** | how something forms | *training* (formación) |
+| **thesis** | doctoral dissertation (or an argued claim) | also *dissertation*; for a master's, often *thesis* or *dissertation* |
+
+## 2. Uncountable nouns
+
+These nouns have **no plural** and do not take *a/an*: **research, evidence, information, equipment, software, feedback, advice, knowledge, progress, work** (in the sense of effort). *Data* is plural in traditional usage (*these data are*) but often singular today (*this data is*); be consistent and follow the journal.
+
+- ✗ *several researches* → ✓ *several studies / much research*
+- ✗ *an evidence* → ✓ *a piece of evidence / some evidence*
+- ✗ *softwares* → ✓ *software packages / tools*
+
+## 3. Other frequent errors
+
+| Error | Example | Correct |
+|---|---|---|
+| Articles with general plurals | *The students often drop out.* (meaning students in general) | *Students often drop out.* |
+| Missing subject | *Is important to note…* | *It is important to note…* |
+| "Make" calques | *make a research, make a question* | *do/conduct research, ask a question* |
+| Adjective order and plurals | *differents methods* | *different methods* |
+| Prepositions | *depend of, consist in, interested on* | *depend on, consist of, interested in* |
+| Comma before *that* | *We found, that…* | *We found that…* |
+| Numbers | *1.200 participants, 3,5 %* | *1,200 participants, 3.5%* |
+
+## 4. Academic vocabulary
+
+Coxhead (2000) compiled the **Academic Word List** (AWL): 570 word families that are frequent across academic disciplines but not in general English (*analyse, approach, assess, concept, data, establish, factor, interpret, method, significant…*). Together they made up around 10% of the words in her corpus of academic texts. Learning them, with their typical **collocations** (*conduct a study, draw a conclusion, raise a question, address a gap*), pays off more than learning rare technical terms.
+
+## Lab: Spanglish detector {#lab-e4-spanglish}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Lab · runs in your browser; your text does not leave it
+:::
+
+```{ojs}
+//| echo: false
+area = window.Lab.area
+viewof borrador = area("Your text", {rows: 6, submit: "Check", value: "Actually, several researches have been realised to contrast this hypothesis. The informations were analysed with differents softwares. Is important to note that the results depend of the sample, which consisted in 1.200 students."})
+```
+
+```{ojs}
+//| echo: false
+{
+  const reglas = [
+    [/\bresearches\b/gi, "«research» is uncountable: use «studies» or «research»"], [/\binformations\b/gi, "«information» is uncountable"], [/\bevidences\b/gi, "«evidence» is uncountable"],
+    [/\bsoftwares\b/gi, "«software» is uncountable: «software tools»"], [/\bequipments\b/gi, "«equipment» is uncountable"], [/\badvices\b/gi, "«advice» is uncountable"], [/\bfeedbacks\b/gi, "«feedback» is uncountable"],
+    [/\bactually\b/gi, "False friend? «actually» = in fact; «actualmente» = currently"], [/\bactual\b/gi, "False friend? «actual» = real; «actual» (es) = current"], [/\beventually\b/gi, "False friend? «eventually» = in the end"],
+    [/\brealis(?:e|ed|ing)\b|\brealiz(?:e|ed|ing)\b/gi, "False friend? «realise» = become aware; use «conduct/carry out»"], [/\bcontrast(?:ed)?\b(?=\s+(?:this|the|our|a)\s+hypothes)/gi, "Use «test the hypothesis»"],
+    [/\bmak(?:e|ing|e a|ed)\s+(?:a\s+)?research\b/gi, "Use «do/conduct research»"], [/\bdifferents\b/gi, "Adjectives have no plural: «different»"], [/(?:^|[.!?]\s+)Is\s/g, "Missing subject: «It is…»"],
+    [/\bdepend(?:s|ed|ing)? of\b/gi, "«depend on»"], [/\bconsist(?:s|ed|ing)? in\b/gi, "«consist of»"], [/\binterested on\b/gi, "«interested in»"],
+    [/\b\d{1,3}\.\d{3}\b/g, "Thousands separator in English is a comma: 1,200"], [/\b\d+,\d+\s?%/g, "Decimal point in English: 3.5%"], [/\bassist(?:ed)? to\b/gi, "«attend»"]];
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const avisos = []; let m = esc(borrador || "");
+  for (const [re, msg] of reglas) { const enc = (borrador || "").match(re); if (enc) { avisos.push([enc[0].trim(), msg]); m = m.replace(re, x => `<mark title="${msg}">${x}</mark>`); } }
+  const d = html`<div role="status"></div>`;
+  d.innerHTML = `<p style="line-height:1.9">${m}</p>${avisos.length ? `<ul>${avisos.map(([w, msg]) => `<li><strong>${esc(w)}</strong>: ${msg}</li>`).join("")}</ul>` : '<p class="lab-bien" style="font-weight:600">No common errors detected. (The lab checks only a list of frequent errors.)</p>'}`;
+  return d;
+}
+```
+:::
+
+## Activities
+
+::: {.clasificar #ia-e4-ff titulo="What does it mean in English?" categorias="Correct use|False friend error"}
+- "We conducted a survey to test the hypothesis." → Correct use
+- "Actually, 30% of students work part-time." (meaning *currently*) → False friend error
+- "Eventually, the method was adopted by most laboratories." (meaning *in the end*) → Correct use
+- "Participants assisted to three workshops." → False friend error
+- "The instrument is sensible to small changes." → False friend error // Use «sensitive».
+:::
+
+::: {.clasificar #ia-e4-count titulo="Correct or incorrect?" categorias="Correct|Incorrect"}
+- "Much research has been done on this topic." → Correct
+- "Several researches show this effect." → Incorrect
+- "We received useful feedback." → Correct
+- "Two evidences support the model." → Incorrect
+- "The software packages were open source." → Correct
+:::
+
+## Assignment {#reto-e4}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Challenge for chapter 4 · Your personal error list
+1. Analyse two pages of your own English writing with the lab and by hand.
+2. Build a personal list of your ten most frequent errors, with the correct form and an example.
+3. Choose 20 AWL words you do not yet use actively and write one sentence about your research with each, using typical collocations.
+
+**Submission:** use the [assignment template](plantillas/entrega_reto.qmd). This challenge **has no solution in the book**.
+:::
+
+## Self-assessment
+
+Answer all the questions and press **Show answers**. It does not count towards your grade.
+
+::: {.webex-check .webex-box}
+1. "Actually" in English means {{< mcq "currently" "*in fact" "eventually" >}}
+2. "Research" is an uncountable noun. {{< torf true >}}
+3. The correct preposition is "depend {{< fitb "on" ignorecase=true >}}"
+4. In English, 1,200 means one thousand two hundred. {{< torf true >}}
+5. The Spanish "realizar un estudio" is best translated as {{< mcq "realise a study" "*conduct a study" "make a study" >}}
+6. The Academic Word List was compiled by {{< fitb "Coxhead" ignorecase=true >}}
+7. "Differents methods" is grammatically correct. {{< torf false >}}
+8. Why learn the Academic Word List?
+
+{{< longmcq "It contains rare technical terms" "*Its words are frequent across academic disciplines and cover a significant share of academic texts" "Journals require it" >}}
+:::
+
+::: {.webex-solution boton="Show explanations"}
+- "Currently" is "actualmente".
+- "Several studies" or "much research".
+- And "consist of".
+- Decimal point, thousands comma.
+- Or "carry out".
+- Coxhead (2000).
+- English adjectives have no plural.
+- 570 word families, about 10% of her corpus.
+:::

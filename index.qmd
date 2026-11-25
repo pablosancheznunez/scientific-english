@@ -1,0 +1,38 @@
+---
+engine: markdown
+---
+
+# Preface {.unnumbered}
+
+English is the main language of international research. For most researchers in the world it is a second (or third) language, and writing, reviewing and presenting in it takes extra time and effort. Amano et al. (2023) surveyed researchers in environmental sciences from many countries and found that non-native speakers spend substantially more time reading, writing and preparing presentations in English, and are more likely to have papers rejected or sent back for revision because of the language. This is a structural inequality of the research system, not a personal failing. This book cannot remove it, but it can make the work faster and the results clearer.
+
+It is written for doctoral students and researchers in any field, with particular attention to the difficulties of Spanish speakers. It does not teach general English: it focuses on the genres researchers need (articles, abstracts, reviews, cover letters, emails, talks) and on the evidence about what makes scientific texts clear.
+
+::: {.callout-note appearance="simple" icon="false"}
+## How to cite this book
+> Sánchez-Núñez, P. (2026). *Scientific English for Researchers: Writing, reviewing and presenting research in English*. Universidad Carlos III de Madrid. Zenodo.
+
+**Author:** Pablo Sánchez-Núñez ([ORCID 0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506)), Universidad Carlos III de Madrid. Text licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+:::
+
+### Further reading {.unnumbered}
+
+- Amano, T.; Ramírez-Castañeda, V.; Berdejo-Espinola, V.; Borokini, I.; Chowdhury, S.; Golivets, M. et al. (2023). [The manifold costs of being a non-native English speaker in science](https://doi.org/10.1371/journal.pbio.3002184). *PLOS Biology*, 21(7), e3002184.
+
+## Map of the book
+
+| Chapter | Question |
+|---|---|
+| [1. The architecture of a research article](01-structure.qmd) | How are articles and abstracts structured, and why? |
+| [2. Clear sentences](02-clarity.qmd) | How do I write sentences readers understand on the first reading? |
+| [3. Hedging and stance](03-stance.qmd) | How strongly should I claim my results? |
+| [4. Common errors and false friends](04-errors.qmd) | Which mistakes do Spanish speakers make, and how do I avoid them? |
+| [5. Peer review and correspondence](05-review.qmd) | How do I write cover letters, reviews and responses to reviewers? |
+| [6. Presenting and networking](06-presenting.qmd) | How do I give talks, handle questions and talk to colleagues in English? |
+
+Each chapter has objectives, a glossary, a required reading with a DOI, labs that run in your browser, activities with instant feedback, an assignment and a self-assessment. The [Phrasebank](90-phrasebank.qmd) collects useful expressions for every section of a paper. Your progress is saved only in your browser.
+
+::: {.callout-tip appearance="simple" icon="false"}
+## A note on AI tools
+Language tools and AI assistants can help you edit, but they can also introduce errors, change your meaning or invent references. Use them as an editor, not as an author: check every change, keep your own voice, and follow the journal's policy on disclosing their use.
+:::

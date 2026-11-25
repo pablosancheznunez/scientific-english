@@ -1,0 +1,32 @@
+{
+  "title": "Scientific English for Researchers",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "description": "<p>Open, interactive book for doctoral students and researchers, especially Spanish speakers, on scientific English: the structure of research articles, clear and concise sentences, hedging and academic stance, common errors and false friends, peer review and academic correspondence, and presentations and networking. Includes interactive labs, activities, self-assessment and assignments.</p>",
+  "creators": [
+    {
+      "name": "Sánchez-Núñez, Pablo",
+      "affiliation": "Universidad Carlos III de Madrid",
+      "orcid": "0000-0001-7845-9506"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "access_right": "open",
+  "keywords": [
+    "scientific English",
+    "academic writing",
+    "English for research publication purposes",
+    "hedging",
+    "peer review",
+    "academic presentations",
+    "non-native speakers"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://pablosancheznunez.com/scientific-english/",
+      "relation": "isAlternateIdentifier",
+      "scheme": "url"
+    }
+  ]
+}

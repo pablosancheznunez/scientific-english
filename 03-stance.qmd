@@ -1,0 +1,142 @@
+---
+engine: markdown
+---
+
+# Chapter 3. Hedging and stance {#sec-cap3}
+
+::: {.callout-note appearance="default"}
+## Objectives
+- Recognise hedges, boosters and other stance markers in scientific texts.
+- Calibrate the strength of claims to the strength of the evidence.
+- Avoid both overclaiming and excessive hedging.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Chapter glossary
+[Hedge](92-glosario.qmd#gl-hedge) · [Booster](92-glosario.qmd#gl-booster) · [Stance](92-glosario.qmd#gl-stance) · [Overclaiming](92-glosario.qmd#gl-overclaim) · [Reporting verb](92-glosario.qmd#gl-reporting)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Downloads
+[Assignment template (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+:::
+
+## Required reading
+
+::: {.lectura}
+Hyland, K. (1996). [Writing without conviction? Hedging in science research articles](https://doi.org/10.1093/applin/17.4.433). *Applied Linguistics*, 17(4), 433-454.
+:::
+
+## 1. Why researchers hedge
+
+Hyland (1996) analysed hedging in research articles in cell and molecular biology and showed that it is not a sign of weakness but a central feature of scientific argument. **Hedges** (*may, might, suggest, possibly, appear to, likely*) do two jobs: they state claims **accurately**, matching them to the evidence, and they show **respect for the reader** and the community, leaving room for disagreement. **Boosters** (*clearly, demonstrate, undoubtedly, it is well known that*) do the opposite: they express certainty.
+
+Good scientific writing calibrates: strong evidence, strong verbs; weak or indirect evidence, cautious verbs.
+
+| Strength | Verbs and expressions | Use when |
+|---|---|---|
+| **Strong** | *show, demonstrate, establish, confirm* | Robust, replicated evidence, ideally causal |
+| **Moderate** | *indicate, suggest, support* | Good evidence with limits (observational, single study) |
+| **Tentative** | *may, might, could, possibly, it is possible that* | Speculation, interpretation, future directions |
+
+## 2. Overclaiming and spin
+
+Overclaiming (saying more than the data allow) is common in abstracts and press releases: causal language for correlational data ("X **causes** Y" instead of "X is **associated with** Y"), generalising from a sample to a population, or calling a non-significant result "a trend towards significance". Reviewers and readers notice, and it damages credibility.
+
+But **excessive hedging** is also a problem, especially for non-native writers who learn that caution is safe: "*It might possibly be suggested that the results could perhaps indicate…*" says nothing. One hedge per claim is usually enough.
+
+## 3. Reporting other people's work
+
+Reporting verbs carry your stance towards a source:
+
+- **Neutral:** *Smith (2020) reports / describes / finds that…*
+- **Positive:** *Smith (2020) shows / demonstrates / establishes that…* (you accept the claim)
+- **Critical or distant:** *Smith (2020) claims / asserts / argues that…* (you leave room for doubt)
+
+## Lab: hedges and boosters {#lab-e3-hedges}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Lab · runs in your browser; your text does not leave it
+:::
+
+```{ojs}
+//| echo: false
+area = window.Lab.area
+viewof texto_h = area("Your text", {rows: 6, submit: "Analyse", value: "Our results clearly demonstrate that mentoring causes higher completion rates. This finding is undoubtedly important for doctoral programmes. However, the effect may differ across disciplines, and it is possible that more motivated students sought mentors."})
+```
+
+```{ojs}
+//| echo: false
+{
+  const hedges = ["may", "might", "could", "possibly", "perhaps", "likely", "unlikely", "suggest", "suggests", "indicate", "indicates", "appear", "appears", "seem", "seems", "probably", "it is possible", "tend to", "to some extent", "approximately", "relatively"];
+  const boosters = ["clearly", "demonstrate", "demonstrates", "undoubtedly", "certainly", "prove", "proves", "obviously", "definitely", "always", "never", "it is well known", "establish", "establishes", "show that", "shows that", "causes", "cause"];
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  let m = esc(texto_h || ""); let nh = 0, nb = 0;
+  const marca = (lista, estilo, cuenta) => { for (const w of lista.sort((a, b) => b.length - a.length)) { const re = new RegExp(`\\b(${w.replace(/ /g, "\\s+")})\\b`, "gi"); m = m.replace(re, x => { cuenta(); return `<span style="${estilo}">${x}</span>`; }); } };
+  marca(hedges, "background:#d6e6f8;color:#0b0b0b;padding:0 2px;border-radius:3px", () => nh++);
+  marca(boosters, "background:#f6dccf;color:#0b0b0b;padding:0 2px;border-radius:3px;font-weight:600", () => nb++);
+  const d = html`<div role="status"></div>`;
+  d.innerHTML = `<p style="line-height:1.9">${m}</p><p class="small"><span style="background:#d6e6f8;color:#0b0b0b;padding:0 2px">blue</span> = hedge (${nh}) · <span style="background:#f6dccf;color:#0b0b0b;padding:0 2px;font-weight:600">orange</span> = booster (${nb})</p>
+   <p class="${nb > nh ? "lab-medio" : "lab-bien"}" style="font-weight:600">${nb > nh ? "More boosters than hedges: check that the evidence (design, sample, replication) supports such strong claims, especially any causal verbs." : "The text is cautious. Check that it is not over-hedged: one hedge per claim is usually enough."}</p>`;
+  return d;
+}
+```
+:::
+
+## Activities
+
+::: {.clasificar #ia-e3-type titulo="Hedge or booster?" categorias="Hedge|Booster"}
+- suggest → Hedge
+- demonstrate → Booster
+- it is possible that → Hedge
+- undoubtedly → Booster
+- appear to → Hedge
+- it is well known that → Booster
+:::
+
+::: {.clasificar #ia-e3-claim titulo="Is the claim calibrated to the evidence?" categorias="Calibrated|Overclaims"}
+- One cross-sectional survey: "Social media use causes anxiety in doctoral students." → Overclaims
+- One cross-sectional survey: "Social media use was associated with anxiety." → Calibrated
+- Three preregistered replications: "These results establish that the effect is robust." → Calibrated
+- A pilot with 12 participants: "The intervention is effective for all students." → Overclaims
+:::
+
+## Assignment {#reto-e3}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Challenge for chapter 3 · Calibrate your claims
+1. Analyse the discussion section of one of your papers or drafts with the lab.
+2. For each main claim, describe the evidence that supports it (design, sample, replication) and decide whether the verb is too strong, too weak or right.
+3. Rewrite the paragraph with calibrated claims and explain your changes.
+
+**Submission:** use the [assignment template](plantillas/entrega_reto.qmd). This challenge **has no solution in the book**.
+:::
+
+## Self-assessment
+
+Answer all the questions and press **Show answers**. It does not count towards your grade.
+
+::: {.webex-check .webex-box}
+1. Hyland (1996) argues that hedging is a sign of weak writing. {{< torf false >}}
+2. Words that express certainty, such as "clearly", are called {{< fitb "boosters" "booster" ignorecase=true >}}
+3. For a correlational study, the best verb is {{< mcq "causes" "*is associated with" "proves" >}}
+4. "Smith (2020) claims that…" expresses a {{< mcq "positive" "*distant or critical" "neutral" >}} stance
+5. Excessive hedging can make a text say nothing. {{< torf true >}}
+6. "Demonstrate" is appropriate for robust, replicated evidence. {{< torf true >}}
+7. Calling a non-significant result "a trend towards significance" is an example of {{< fitb "spin" "overclaiming" ignorecase=true >}}
+8. What is the main function of hedges according to Hyland?
+
+{{< longmcq "To hide weak results" "*To state claims accurately and show respect for readers and the community" "To make texts longer" >}}
+:::
+
+::: {.webex-solution boton="Show explanations"}
+- It is central to scientific argument.
+- They express certainty.
+- Causal language needs causal designs.
+- You leave room for doubt.
+- One hedge per claim is usually enough.
+- Strong evidence, strong verbs.
+- Presenting results more favourably than they are.
+- Accuracy and politeness.
+:::

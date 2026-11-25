@@ -1,0 +1,175 @@
+<style>
+.progreso-capitulo { border: 1px solid var(--bs-border-color, #dee2e6); border-left: 4px solid var(--bs-primary, #000e78);
+  border-radius: .35rem; padding: .6rem .9rem; margin: 0 0 1.4rem; font-size: .92rem; background: rgba(127, 127, 127, .08); color: inherit; }
+.progreso-capitulo progress { width: 100%; height: .6rem; margin: .35rem 0 .2rem; accent-color: var(--bs-primary, #000e78); }
+.progreso-capitulo .progreso-nota { font-size: .82rem; opacity: .85; }
+.progreso-capitulo button, #progreso-resumen button { font-size: .82rem; padding: .05rem .5rem; margin-left: .4rem;
+  border: 1px solid var(--bs-border-color, #ced4da); border-radius: .3rem; background: transparent; color: inherit; }
+#progreso-resumen table { width: 100%; }
+#progreso-resumen { margin-bottom: 1.2rem; }
+#progreso-resumen progress { width: 8rem; height: .55rem; accent-color: var(--bs-primary, #000e78); vertical-align: middle; }
+.sin-conexion-estado { font-size: .85rem; }
+</style>
+<script>
+/* Progreso del estudiante: cuenta los ejercicios de código resueltos y las
+   preguntas de autoevaluación acertadas en cada capítulo. Se guarda solo en
+   el almacenamiento local de este navegador; no se envía a ningún servidor. */
+(function () {
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  function tr(es, en) { return EN ? en : es; }
+  var CLAVE = 'progreso-' + (location.pathname.split('/').filter(Boolean)[0] || 'libro') + '-v1';
+  function leer() { try { return JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (e) { return {}; } }
+  function guardar(d) { try { localStorage.setItem(CLAVE, JSON.stringify(d)); } catch (e) {} }
+  var pagina = location.pathname.split('/').pop() || 'index.html';
+
+  function nombresEjercicios() {
+    var m = {};
+    document.querySelectorAll('script[type^="webr-"][type$="-contents"]').forEach(function (s) {
+      try {
+        var bin = atob(s.textContent.trim());
+        var d = JSON.parse(new TextDecoder().decode(Uint8Array.from(bin, function (c) { return c.charCodeAt(0); })));
+        if (d.attr && d.attr.exercise && !d.attr.setup && !d.attr.check) m[s.type.replace('-contents', '')] = d.attr.exercise;
+      } catch (e) {}
+    });
+    return m;
+  }
+  function preguntas() {
+    return Array.prototype.slice.call(document.querySelectorAll('.webex-check .webex-solveme, .webex-check .webex-select, .webex-check .webex-radiogroup'));
+  }
+
+  function registro(datos) {
+    var r = datos[pagina] || { ej: [], pr: [] };
+    r.ia = r.ia || []; r.totalIa = r.totalIa || 0;
+    r.titulo = (document.querySelector('h1.title, h1') || {}).textContent || pagina;
+    r.titulo = r.titulo.replace(/\s+/g, ' ').trim();
+    return r;
+  }
+
+  function pintar(caja, totalEj, totalPr, totalIa) {
+    var r = registro(leer());
+    totalIa = totalIa || 0;
+    var hechos = r.ej.length + r.pr.length + r.ia.length, total = totalEj + totalPr + totalIa;
+    var partes = [];
+    if (totalEj) partes.push(r.ej.length + tr(' de ', ' of ') + totalEj + tr(' ejercicios de código', ' code exercises'));
+    if (totalIa) partes.push(r.ia.length + tr(' de ', ' of ') + totalIa + tr(' actividades', ' activities'));
+    if (totalPr) partes.push(r.pr.length + tr(' de ', ' of ') + totalPr + tr(' preguntas acertadas', ' correct answers'));
+    caja.innerHTML = tr('<strong>Tu progreso en este capítulo:</strong> ', '<strong>Your progress in this chapter:</strong> ') + partes.join(' · ') +
+      '<progress max="' + total + '" value="' + hechos + tr('" aria-label="Progreso del capítulo: ', '" aria-label="Chapter progress: ') + hechos + tr(' de ', ' of ') + total + '"></progress>' +
+      tr('<span class="progreso-nota">Se guarda solo en este navegador.</span>', '<span class="progreso-nota">Saved only in this browser.</span>') +
+      tr('<button type="button">Borrar el progreso del capítulo</button>', '<button type="button">Clear chapter progress</button>');
+    caja.querySelector('button').addEventListener('click', function () {
+      var d = leer(); delete d[pagina]; guardar(d); pintar(caja, totalEj, totalPr, totalIa);
+    });
+  }
+
+  function capitulo() {
+    var mapa = nombresEjercicios();
+    var nombres = Object.keys(mapa).map(function (k) { return mapa[k]; })
+      .filter(function (v, i, a) { return a.indexOf(v) === i; });
+    var lista = preguntas();
+    var actividades = Array.prototype.map.call(document.querySelectorAll('.ia[id]'), function (x) { return x.id; });
+    var nIa = actividades.length;
+    if (!nombres.length && !lista.length && !nIa) return;
+
+    var d = leer(); var r = registro(d);
+    r.totalEj = nombres.length; r.totalPr = lista.length; r.totalIa = nIa; d[pagina] = r; guardar(d);
+
+    var caja = document.createElement('div');
+    caja.className = 'progreso-capitulo';
+    caja.setAttribute('role', 'status');
+    var cabecera = document.querySelector('#title-block-header') || document.querySelector('main h1');
+    if (!cabecera) return;
+    cabecera.parentNode.insertBefore(caja, cabecera.nextSibling);
+    pintar(caja, nombres.length, lista.length, nIa);
+
+    function anotar(tipo, valor) {
+      var d = leer(); var r = registro(d);
+      if (r[tipo].indexOf(valor) === -1) {
+        r[tipo].push(valor); r.totalEj = nombres.length; r.totalPr = lista.length; r.totalIa = nIa;
+        d[pagina] = r; guardar(d); pintar(caja, nombres.length, lista.length, nIa);
+      }
+    }
+
+    // Ejercicios de webR: un aviso verde de quarto-live dentro de la celda del ejercicio
+    new MutationObserver(function () {
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  function tr(es, en) { return EN ? en : es; }
+      document.querySelectorAll('.exercise-grade.alert-success:not([data-progreso])').forEach(function (a) {
+        a.setAttribute('data-progreso', '1');
+        var el = a;
+        while (el && !(el.id && mapa[el.id])) el = el.parentElement;
+        if (el) anotar('ej', mapa[el.id]);
+      });
+    }).observe(document.body, { childList: true, subtree: true });
+
+    // Actividades interactivas (ordenar, clasificar, zonas, escenarios, laboratorios)
+    document.addEventListener('ia-resuelto', function (e) { if (actividades.indexOf(e.detail) !== -1) anotar('ia', e.detail); });
+
+    // Preguntas: se anotan al pulsar «Mostrar respuestas»
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('.webex-check-button');
+      if (!b) return;
+      setTimeout(function () {
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  function tr(es, en) { return EN ? en : es; }
+        lista.forEach(function (q, i) {
+          if (q.classList.contains('webex-correct') || q.querySelector('.webex-correct')) anotar('pr', i);
+        });
+      }, 0);
+    });
+  }
+
+  function resumen() {
+    var destino = document.getElementById('progreso-resumen');
+    if (!destino) return;
+    var d = leer();
+    var filas = [];
+    document.querySelectorAll('#quarto-sidebar a.sidebar-link').forEach(function (a) {
+      var f = (a.getAttribute('href') || '').split('/').pop().split('#')[0];
+      if (!f || f === 'index.html' || /^9\d-/.test(f) || filas.some(function (x) { return x.f === f; })) return;
+      filas.push({ f: f, t: a.textContent.replace(/\s+/g, ' ').trim(), r: d[f] });
+    });
+    var html = '<' + 'table class="table table-sm"><thead><tr><th scope="col">' + tr('Capítulo', 'Chapter') + '</th><th scope="col">' + tr('Progreso', 'Progress') + '</th></tr></thead><tbody>';
+    filas.forEach(function (x) {
+      var celda = tr('Sin empezar', 'Not started');
+      if (x.r && (x.r.totalEj || x.r.totalPr || x.r.totalIa)) {
+        var ia = x.r.ia || [], tIa = x.r.totalIa || 0;
+        var h = x.r.ej.length + x.r.pr.length + ia.length, t = x.r.totalEj + x.r.totalPr + tIa;
+        var trozos = [];
+        if (x.r.totalEj) trozos.push(x.r.ej.length + '/' + x.r.totalEj + tr(' ejercicios', ' exercises'));
+        if (tIa) trozos.push(ia.length + '/' + tIa + tr(' actividades', ' activities'));
+        if (x.r.totalPr) trozos.push(x.r.pr.length + '/' + x.r.totalPr + tr(' preguntas', ' questions'));
+        celda = '<progress max="' + t + '" value="' + h + '" aria-label="' + h + tr(' de ', ' of ') + t + '"></progress> ' + trozos.join(' · ');
+      }
+      html += '<tr><td><a href="' + x.f + '">' + x.t + '</a></td><td>' + celda + '</td></tr>';
+    });
+    html += '</tbody></' + 'table><button type="button">' + tr('Borrar todo mi progreso', 'Clear all my progress') + '</button>';
+    destino.innerHTML = html;
+    destino.querySelector('button').addEventListener('click', function () {
+      try { localStorage.removeItem(CLAVE); } catch (e) {}
+      resumen();
+    });
+  }
+
+  function iniciar() { capitulo(); resumen(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})();
+
+/* Uso sin conexión: un service worker guarda el libro, webR y sus paquetes
+   la primera vez que se visitan. */
+(function () {
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  function tr(es, en) { return EN ? en : es; }
+  if (!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').then(function () {
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  function tr(es, en) { return EN ? en : es; }
+      var estado = document.getElementById('sin-conexion-estado');
+      if (estado) estado.textContent = tr('Este navegador ya guarda el libro para usarlo sin conexión.', 'This browser now stores the book for offline use.');
+    }).catch(function () {
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  function tr(es, en) { return EN ? en : es; }});
+  });
+})();
+</script>

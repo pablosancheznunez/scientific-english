@@ -1,0 +1,54 @@
+---
+engine: markdown
+---
+
+# Phrasebank {#sec-phrasebank}
+
+Useful expressions for each part of a research article. Adapt them; do not paste them mechanically.
+
+## Introduction
+
+- *X is a central issue in…* / *There is growing interest in…*
+- *Previous studies have shown that… (Smith, 2020; Lee, 2022).*
+- *However, little is known about… / Few studies have examined… / It remains unclear whether…*
+- *This study aims to… / Here, we examine… / In this paper, we report…*
+
+## Methods
+
+- *Data were obtained from… / We collected data from… between… and…*
+- *Participants were recruited through… / The sample consisted of…*
+- *We used X to estimate… / Analyses were conducted in R (version…).*
+- *The study was preregistered at… / Data and code are available at…*
+
+## Results
+
+- *Table 2 shows… / As shown in Figure 3,…*
+- *X was associated with Y (β = 0.32, 95% CI [0.18, 0.46]).*
+- *We found no evidence that… / The difference was small and imprecise.*
+
+## Discussion
+
+- *These findings suggest that… / This is consistent with… / In contrast to…*
+- *One possible explanation is that…*
+- *Our design does not allow us to conclude that…*
+- *Future research could…*
+
+## Conclusion
+
+- *In summary, … / Taken together, these results indicate…*
+
+## Correspondence
+
+- *I am writing to… / I would be grateful if you could… / Please find attached…*
+- *I look forward to hearing from you. / Kind regards,*
+
+## Peer review
+
+- *The manuscript addresses an important question… / My main concern is…*
+- *I would encourage the authors to… / It is unclear from the text whether…*
+
+## Responses to reviewers
+
+- *We thank the reviewer for this helpful comment.*
+- *We have revised the text accordingly (p. 7, lines 140-152).*
+- *We respectfully disagree, because…*

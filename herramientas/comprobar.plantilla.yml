@@ -1,0 +1,64 @@
+# Genera el libro y comprueba que todo funciona en un navegador real:
+# ejercicios de webR, preguntas de autoevaluación y accesibilidad (WCAG 2.1 AA)
+# en modo claro y oscuro. Generado por herramientas/preparar.py.
+name: Comprobar el libro
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dependencias
+        run: |
+          pip install playwright pyyaml matplotlib
+          python -m playwright install --with-deps chromium
+          npm install axe-core@4
+
+      - name: Regenerar ficheros derivados
+        run: |
+          cd herramientas && python preparar.py && python extraer_r.py && python moodle.py && cd ..
+          git diff --stat
+
+      - name: Renderizar el libro
+        run: quarto render
+
+      - name: Ejercicios de webR
+        run: python herramientas/pruebas/ejercicios.py . 60 __EJERCICIOS__
+
+      - name: Preguntas de autoevaluación
+        run: python herramientas/pruebas/autoevaluacion.py _book __PAGINAS__
+
+      - name: Accesibilidad (axe-core, WCAG 2.1 AA)
+        env:
+          AXE_JS: node_modules/axe-core/axe.min.js
+        run: python herramientas/pruebas/accesibilidad.py _book __PAGINAS__
+
+      - name: Accesibilidad en modo oscuro
+        env:
+          AXE_JS: node_modules/axe-core/axe.min.js
+          MODO: oscuro
+        run: python herramientas/pruebas/accesibilidad.py _book __PAGINAS__
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: libro
+          path: _book
+          retention-days: 7

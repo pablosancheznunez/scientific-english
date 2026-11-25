@@ -1,0 +1,152 @@
+---
+engine: markdown
+---
+
+# Chapter 2. Clear sentences {#sec-cap2}
+
+::: {.callout-note appearance="default"}
+## Objectives
+- Apply reader-expectation principles: topic and stress positions, old-to-new information.
+- Reduce nominalisations, unnecessary passives and wordy phrases.
+- Measure and improve the readability of your own text.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Chapter glossary
+[Readability](92-glosario.qmd#gl-readability) · [Topic position](92-glosario.qmd#gl-topic) · [Stress position](92-glosario.qmd#gl-stress) · [Nominalisation](92-glosario.qmd#gl-nominal) · [Passive voice](92-glosario.qmd#gl-passive) · [Plain language](92-glosario.qmd#gl-plain)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Downloads
+[Assignment template (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+:::
+
+## Required reading
+
+::: {.lectura}
+Plavén-Sigray, P.; Matheson, G. J.; Schiffler, B. C.; Thompson, W. H. (2017). [The readability of scientific texts is decreasing over time](https://doi.org/10.7554/eLife.27725). *eLife*, 6, e27725.
+:::
+
+## 1. Scientific texts are getting harder to read
+
+Plavén-Sigray et al. (2017) analysed more than 700,000 abstracts from biomedical and life-science journals published between 1881 and 2015. Readability, measured with standard formulas, **decreased steadily**, partly because of more general scientific jargon ("robust", "underlying", "novel") and longer sentences. Hard-to-read texts reduce the reach and the reproducibility of research: a method that cannot be understood cannot be repeated.
+
+## 2. Readers' expectations
+
+Gopen and Swan's classic advice on scientific writing can be summarised in a few principles:
+
+- **Subject and verb close together and early.** Readers wait for the verb; a long subject delays understanding.
+- **Topic position** (the beginning of a sentence) holds **old information** that links to what came before.
+- **Stress position** (the end of the sentence) holds the **new, important information**.
+- **One main idea per sentence.** Long sentences are not wrong; long sentences that hide the action are.
+
+> **Hard:** *The determination of the extent to which open data mandates were associated with increases in data reuse across disciplines was the aim of this study.*
+>
+> **Clear:** *We examined whether open data mandates increased data reuse across disciplines.*
+
+## 3. Three habits that cloud sentences
+
+| Habit | Example | Better |
+|---|---|---|
+| **Nominalisation** (verbs turned into nouns: *-tion, -ment, -ance*) | *We performed an analysis of the data.* | *We analysed the data.* |
+| **Unnecessary passive** | *It was found by the authors that…* | *We found that…* |
+| **Wordy phrases** | *due to the fact that; in order to; a large number of* | *because; to; many* |
+
+The passive is not forbidden: it is useful when the agent is unknown or irrelevant (*Samples were stored at −80 °C*). Many journals now encourage *we* for the authors' actions.
+
+## Lab: readability checker {#lab-e2-readability}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Lab · runs in your browser; your text does not leave it
+:::
+
+Paste a paragraph. The lab estimates the Flesch Reading Ease score (higher = easier; most scientific abstracts score below 30), the average sentence length, and highlights nominalisations, passive constructions and wordy phrases.
+
+```{ojs}
+//| echo: false
+area = window.Lab.area
+viewof parrafo = area("Your text", {rows: 7, submit: "Analyse", value: "In order to perform an evaluation of the effectiveness of the intervention, an analysis of the data was conducted by the research team. It was found that there was a significant reduction in attrition due to the fact that supervision meetings were held more frequently. The implementation of the programme is recommended."})
+```
+
+```{ojs}
+//| echo: false
+{
+  const t = parrafo || "";
+  const frases = t.replace(/\s+/g, " ").split(/(?<=[.!?])\s+/).filter(f => f.trim());
+  const palabras = t.toLowerCase().match(/[a-z']+/g) || [];
+  const sil = w => { w = w.replace(/e$/, ""); const m = w.match(/[aeiouy]+/g); return Math.max(1, m ? m.length : 1); };
+  const nP = palabras.length || 1, nF = Math.max(1, frases.length), nS = palabras.reduce((s, w) => s + sil(w), 0);
+  const fre = 206.835 - 1.015 * (nP / nF) - 84.6 * (nS / nP);
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const prolijas = {"in order to": "to", "due to the fact that": "because", "a large number of": "many", "in spite of the fact that": "although", "at this point in time": "now", "it is important to note that": "(delete)", "with regard to": "about", "a majority of": "most", "conduct an analysis of": "analyse", "perform an evaluation of": "evaluate"};
+  let marcado = esc(t);
+  marcado = marcado.replace(/\b(\w+(?:tion|ment|ance|ence|sis))\b/gi, '<mark title="nominalisation">$1</mark>');
+  marcado = marcado.replace(/\b(was|were|is|are|been|be|being)\s+(\w+ed|found|held|made|done|shown|seen|given|taken)\b/gi, '<u title="passive">$1 $2</u>');
+  const vistas = Object.keys(prolijas).filter(k => t.toLowerCase().includes(k));
+  const nivel = fre >= 60 ? "plain English" : fre >= 30 ? "fairly difficult" : "very difficult (typical of scientific prose)";
+  const d = html`<div role="status"></div>`;
+  d.innerHTML = `<ul><li>Flesch Reading Ease: <strong>${fre.toFixed(0)}</strong> · ${nivel}</li><li>${nF} sentences · <strong>${(nP / nF).toFixed(1)}</strong> words per sentence</li></ul>
+   <p style="line-height:1.9">${marcado}</p>
+   <p class="small"><mark>highlighted</mark> = possible nominalisation · <u>underlined</u> = possible passive</p>
+   ${vistas.length ? `<p class="lab-medio" style="font-weight:600">Wordy phrases: ${vistas.map(k => `«${k}» → «${prolijas[k]}»`).join("; ")}</p>` : '<p class="lab-bien" style="font-weight:600">No common wordy phrases found.</p>'}
+   <p class="small">These are heuristics: not every -tion word or passive is a problem. Use them to look again, not as rules.</p>`;
+  return d;
+}
+```
+:::
+
+## Activities
+
+::: {.clasificar #ia-e2-better titulo="Which version is clearer?" categorias="Clearer|Less clear"}
+- "We analysed the data." → Clearer
+- "An analysis of the data was performed." → Less clear
+- "Attrition fell because supervisors met students monthly." → Clearer
+- "A reduction in attrition was observed due to the fact that meetings were more frequent." → Less clear
+:::
+
+::: {.clasificar #ia-e2-passive titulo="Is the passive appropriate here?" categorias="Appropriate|Better active"}
+- "Samples were stored at −80 °C." → Appropriate // The agent does not matter.
+- "It was decided by the authors to exclude outliers." → Better active // "We excluded outliers."
+- "The survey was translated into Spanish by two bilingual researchers." → Appropriate // Focus on the survey; the agent is still given.
+- "It is believed by us that the effect is real." → Better active
+:::
+
+## Assignment {#reto-e2}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Challenge for chapter 2 · Make it readable
+1. Take the abstract of your latest paper or draft and analyse it with the lab.
+2. Rewrite it, reducing nominalisations, unnecessary passives and wordy phrases, without changing the meaning or losing precision.
+3. Report the readability before and after and explain three changes.
+
+**Submission:** use the [assignment template](plantillas/entrega_reto.qmd). This challenge **has no solution in the book**.
+:::
+
+## Self-assessment
+
+Answer all the questions and press **Show answers**. It does not count towards your grade.
+
+::: {.webex-check .webex-box}
+1. Plavén-Sigray et al. (2017) found that the readability of scientific abstracts has {{< mcq "increased" "*decreased" "not changed" >}} over time
+2. New, important information should go in the {{< fitb "stress" ignorecase=true >}} position at the end of the sentence
+3. "We performed an analysis of the data" contains a nominalisation. {{< torf true >}}
+4. The passive voice should never be used in scientific writing. {{< torf false >}}
+5. "Due to the fact that" can usually be replaced by {{< fitb "because" ignorecase=true >}}
+6. A higher Flesch Reading Ease score means {{< mcq "harder text" "*easier text" "longer text" >}}
+7. Subject and verb should be close together and early in the sentence. {{< torf true >}}
+8. Why does readability matter for research?
+
+{{< longmcq "It only matters for popular science" "*Hard-to-read texts reach fewer readers and are harder to reproduce" "Journals reject all difficult texts" >}}
+:::
+
+::: {.webex-solution boton="Show explanations"}
+- Longer sentences and more general jargon.
+- The topic position holds old information.
+- "We analysed the data."
+- Useful when the agent is unknown or irrelevant.
+- And "in order to" by "to".
+- Above 60 is plain English.
+- Readers wait for the verb.
+- Clarity serves reproducibility.
+:::

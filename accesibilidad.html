@@ -1,0 +1,42 @@
+<script>
+/* Mejoras de accesibilidad del libro:
+   - nombre accesible para los editores de código de quarto-live (CodeMirror),
+   - foco de teclado en sus áreas desplazables,
+   - texto alternativo para el icono de ORCID de la portada. */
+(function () {
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  function tr(es, en) { return EN ? en : es; }
+  function arreglar(raiz) {
+    raiz.querySelectorAll('.cm-content:not([aria-label])').forEach(function (el) {
+      el.setAttribute('aria-label', tr('Editor de código R', 'Code editor'));
+    });
+    raiz.querySelectorAll('.cm-scroller').forEach(function (el) {
+      if (el.getAttribute('tabindex') !== '0') el.setAttribute('tabindex', '0');
+      if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', tr('Código R', 'Code'));
+    });
+    // controles de Observable (deslizadores y casillas) sin nombre accesible
+    raiz.querySelectorAll('form input:not([aria-label]), form select:not([aria-label])').forEach(function (el) {
+      var form = el.closest('form');
+      var lab = form && form.querySelector('label');
+      if (lab && !(el.id && form.querySelector('label[for="' + el.id + '"]'))) {
+        el.setAttribute('aria-label', lab.textContent.trim() + (el.type === 'number' ? tr(' (valor)', ' (value)') : ''));
+      }
+    });
+    // menú de descarga de la barra lateral (solo icono)
+    raiz.querySelectorAll('.quarto-navigation-tool.dropdown-toggle').forEach(function (a) {
+      if (a.getAttribute('aria-label')) return;
+      a.setAttribute('aria-label', tr('Descargar el libro en PDF o EPUB', 'Download the book as PDF or EPUB'));
+      a.setAttribute('title', tr('Descargar el libro en PDF o EPUB', 'Download the book as PDF or EPUB'));
+    });
+    raiz.querySelectorAll('.quarto-title-author-orcid').forEach(function (a) {
+      a.setAttribute('aria-label', tr('Perfil ORCID de Pablo Sánchez-Núñez', 'ORCID profile of Pablo Sánchez-Núñez'));
+      var img = a.querySelector('img');
+      if (img && !img.hasAttribute('alt')) img.setAttribute('alt', 'ORCID');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function () { arreglar(document); });
+  new MutationObserver(function () { arreglar(document); })
+    .observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+<script src="/consent.js" defer></script>

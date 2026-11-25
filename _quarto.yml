@@ -1,0 +1,79 @@
+project:
+  type: book
+  output-dir: _book
+  resources:
+  - laboratorio.js
+  - fuentes
+  - datos
+  - plantillas
+  - pdf
+  - moodle
+  - sw.js
+book:
+  title: Scientific English for Researchers
+  subtitle: Writing, reviewing and presenting research in English
+  author:
+  - name: Pablo Sánchez-Núñez
+    orcid: 0000-0001-7845-9506
+    url: https://pablosancheznunez.com
+    affiliation: Universidad Carlos III de Madrid
+  date: last-modified
+  date-format: D MMMM YYYY
+  language: en
+  site-url: https://pablosancheznunez.com/scientific-english/
+  search: true
+  page-navigation: true
+  sidebar:
+    tools:
+    - icon: download
+      menu:
+      - text: Book (PDF)
+        href: pdf/scientific-english.pdf
+      - text: Book (EPUB, for e-readers)
+        href: pdf/scientific-english.epub
+  page-footer:
+    left: © 2026 [Pablo Sánchez-Núñez](https://pablosancheznunez.com) · [ORCID 0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506) · Text licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+    right: Universidad Carlos III de Madrid · Made with [Quarto](https://quarto.org)
+  chapters:
+  - index.qmd
+  - part: Chapters
+    chapters:
+    - 01-structure.qmd
+    - 02-clarity.qmd
+    - 03-stance.qmd
+    - 04-errors.qmd
+    - 05-review.qmd
+    - 06-presenting.qmd
+  appendices:
+  - 90-phrasebank.qmd
+  - 91-guia-docente.qmd
+  - 92-glosario.qmd
+lang: en
+crossref:
+  chapters: false
+filters:
+- webex
+- interactivos
+format:
+  html:
+    theme:
+      light:
+      - cosmo
+      - estilos.scss
+      dark:
+      - darkly
+      - estilos-oscuro.scss
+    respect-user-color-scheme: true
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-copy: true
+    css: fuentes/fuentes.css
+    lightbox: auto
+    link-external-newwindow: true
+    callout-appearance: simple
+    include-in-header:
+    - laboratorio.html
+    include-after-body:
+    - accesibilidad.html
+    - progreso.html

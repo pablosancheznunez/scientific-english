@@ -1,0 +1,19 @@
+/*-- scss:defaults --*/
+$web-font-path: false;
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Source Code Pro", SFMono-Regular, Menlo, Consolas, monospace;
+$primary: #000e78;
+$link-color: #000e78;
+$font-size-root: 17px;
+
+/*-- scss:rules --*/
+
+.exercise-cell .card-header { background-color: #eef0fb; }
+.lectura { border-left: 4px solid $primary; padding: .6rem 1rem; background: #f6f7fc; margin: 1rem 0; }
+.lectura p:last-child { margin-bottom: 0; }
+table { font-size: .92rem; }
+
+blockquote, .blockquote { color: #3f4a54; border-left-color: #000e78; }
+
+/* Contraste AA para pies de figura y textos atenuados */
+.figure-caption, figcaption, .quarto-figure figcaption, .text-muted, .figure .caption, table caption, caption { color: #4a5560 !important; }

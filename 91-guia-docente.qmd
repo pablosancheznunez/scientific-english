@@ -1,0 +1,31 @@
+---
+engine: markdown
+---
+
+# Teacher's guide {#sec-guia}
+
+The book can be used as the textbook of a doctoral workshop of about 18-24 hours (six sessions) on scientific English, or for self-study. It assumes an intermediate level of English (around B2) and focuses on research genres rather than general English.
+
+## Suggested assessment
+
+| Activity | Suggested weight |
+|---|---|
+| Assignments (choose 4 of 6) | 60% |
+| Final task: abstract, cover letter and five-minute talk on the student's own research | 30% |
+| Self-assessments and participation | 10% |
+
+The common rubric values structure and argument (25%), clarity and concision (25%), accuracy of language (20%), appropriate academic style (20%) and reflection (10%).
+
+## Labs and activities
+
+Labs: readability checker, hedge and booster highlighter, and Spanglish detector. Scenario: a difficult reviewer. In the PDF and EPUB, the activities appear on paper with their solutions.
+
+## Recommendations
+
+- Work with the students' own texts as early as possible.
+- Normalise the difficulty: most researchers are non-native speakers (Amano et al., 2023), and clarity matters more than accent.
+- Discuss the responsible use of language tools and AI assistants, and the journals' disclosure policies.
+
+## Moodle and slides
+
+The questions are exported to **Moodle XML** in `moodle/`. Slides for each chapter are in [diapositivas/](diapositivas/index.html){target="_blank"}.

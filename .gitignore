@@ -1,0 +1,9 @@
+_book/
+_pdf/
+_freeze/
+/.quarto/
+__pycache__/
+/_diapositivas/
+.Rhistory
+
+**/*.quarto_ipynb

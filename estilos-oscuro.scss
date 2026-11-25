@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+$web-font-path: false;
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Source Code Pro", SFMono-Regular, Menlo, Consolas, monospace;
+$primary: #8fb3ff;
+$link-color: #8fb3ff;
+$font-size-root: 17px;
+
+/*-- scss:rules --*/
+
+.exercise-cell .card-header { background-color: #2b3246; }
+.lectura { border-left: 4px solid $primary; padding: .6rem 1rem; background: #222838; margin: 1rem 0; }
+.lectura p:last-child { margin-bottom: 0; }
+table { font-size: .92rem; }
+
+blockquote, .blockquote { color: #d0d6dd; border-left-color: $primary; }
+
+/* Contraste AA para pies de figura y textos atenuados sobre fondo oscuro */
+.figure-caption, figcaption, .quarto-figure figcaption, .text-muted, .figure .caption, table caption, caption { color: #c3cad2 !important; }
+
+/* Las figuras SVG están dibujadas para fondo claro: se muestran sobre una tarjeta blanca */
+.quarto-figure img, figure img { background: #fff; padding: .6rem; border-radius: .4rem; }
+
+/* Preguntas de autoevaluación */
+.webex-select, input.webex-solveme,
+.unchecked .webex-incorrect, .unchecked .webex-correct,
+.unchecked .webex-radiogroup label.webex-incorrect,
+.unchecked .webex-radiogroup label.webex-correct {
+  background-color: #2b3246 !important; color: #f1f3f5 !important;
+}
+.webex-check-button, .webex-solution button { background-color: $primary !important; color: #10131a !important; }
+.webex-box, .webex-solution.open { border-color: $primary !important; }
+
+/* Botones con fondo claro: texto oscuro para mantener el contraste */
+.btn-primary, .btn-primary:hover, .btn-primary:focus,
+.btn-exercise-editor.btn-primary, .btn-exercise-editor.btn-primary .btn-label-exercise-editor {
+  color: #10131a !important;
+}
+
+/* Navegación entre capítulos y migas de pan */
+.nav-page-text, .nav-page-text .chapter-title, .breadcrumb .chapter-title, .breadcrumb-item a { color: #c3cad2 !important; }
+
+/* Código dentro de títulos */
+h1 code, h2 code, h3 code, h4 code, th code, figcaption code, .figure-caption code, caption code { background-color: transparent !important; color: inherit !important; }

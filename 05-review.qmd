@@ -1,0 +1,148 @@
+---
+engine: markdown
+---
+
+# Chapter 5. Peer review and correspondence {#sec-cap5}
+
+::: {.callout-note appearance="default"}
+## Objectives
+- Write cover letters and academic emails with the right tone and structure.
+- Write a constructive peer review.
+- Respond to reviewers clearly, politely and completely.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Chapter glossary
+[Cover letter](92-glosario.qmd#gl-cover) · [Response to reviewers](92-glosario.qmd#gl-response) · [Major and minor revision](92-glosario.qmd#gl-revision) · [Politeness strategies](92-glosario.qmd#gl-politeness) · [Rebuttal](92-glosario.qmd#gl-rebuttal)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Downloads
+[Assignment template (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+:::
+
+## Required reading
+
+::: {.lectura}
+Noble, W. S. (2017). [Ten simple rules for writing a response to reviewers](https://doi.org/10.1371/journal.pcbi.1005730). *PLOS Computational Biology*, 13(10), e1005730.
+:::
+
+## 1. Cover letters
+
+A cover letter to an editor is short (one page) and answers three questions: **what** you are submitting, **why** it matters to this journal's readers, and **formal statements** (originality, no simultaneous submission, conflicts of interest, data availability). Do not repeat the abstract.
+
+> Dear Dr Smith,
+>
+> Please find attached our manuscript "Supervision quality predicts doctoral completion: a five-year cohort study", which we submit for consideration as a Research Article in *Higher Education*.
+>
+> Most studies of doctoral attrition are cross-sectional. Following 1,200 students for five years, we show that changes in supervision quality predict completion better than funding. These findings will interest readers working on doctoral education policy.
+>
+> The manuscript has not been published or submitted elsewhere. All authors approved it and declare no conflicts of interest. Data and code are available at [DOI].
+>
+> Yours sincerely,
+
+## 2. Writing a review
+
+A useful review has a clear structure: a **summary** of the paper's claims (to show you understood them), the **main concerns** (validity, methods, interpretation), **minor points**, and, if the journal asks, a recommendation. Be specific ("the model does not control for cohort; please add it or explain why not") and kind: criticise the work, not the authors. Avoid asking for a different paper.
+
+## 3. Responding to reviewers
+
+Noble (2017) offers rules that turn a stressful task into a manageable one. The most important:
+
+- **Provide an overview**, then respond to **every point**, quoting each comment in full.
+- **Be polite and respectful** to all reviewers, even when they are wrong.
+- **Accept the blame** when the reviewer misunderstood: it usually means the text was unclear, so clarify it.
+- **Make the response self-contained**: the editor should not need to search the manuscript; quote the changed text.
+- **Respond to the reviewer's intent**, not only the literal request.
+- **Be clear about what changed**, with page and line numbers.
+- When you disagree, give **evidence and reasons**, and consider doing the requested analysis anyway (perhaps in the supplement).
+
+| Instead of | Write |
+|---|---|
+| *The reviewer is wrong.* | *We respectfully disagree, because…* |
+| *This was already explained.* | *We have clarified this point in the Methods (p. 6, lines 120-128).* |
+| *We do not have time to do this.* | *This analysis is beyond the scope of this study, but we now mention it as a limitation (p. 15).* |
+
+## 4. Academic emails
+
+Short, with a clear subject line and the request in the first two sentences. Formal openings (*Dear Professor García,*), a polite request (*Would you be able to…? I would be grateful if…*) and a closing (*Best regards, / Kind regards,*). Avoid Spanish calques such as *I write you to…* (→ *I am writing to…*) and *Waiting for your answer* (→ *I look forward to hearing from you*).
+
+## Activities
+
+::: {.clasificar #ia-e5-tone titulo="Appropriate tone for a response to reviewers?" categorias="Appropriate|Inappropriate"}
+- "We thank the reviewer for this helpful comment and have added the analysis (p. 9)." → Appropriate
+- "The reviewer clearly did not read the paper carefully." → Inappropriate
+- "We respectfully disagree: as shown in Table 3, the effect remains after adjustment." → Appropriate
+- "This is obvious and does not need explanation." → Inappropriate
+:::
+
+::: {.ordenar #ia-e5-response titulo="Order a response to a reviewer's comment"}
+1. Quote the reviewer's comment in full
+2. Thank the reviewer or acknowledge the point
+3. Explain what you did or why you disagree
+4. Show the changed text with page and line numbers
+:::
+
+::: {.escenario #ia-e5-escenario titulo="A difficult reviewer"}
+Reviewer 2 says your sample is too small and asks you to collect more data, which would take a year.
+
+### The comment {#e5e-inicio}
+How do you respond?
+
+- ["The sample is adequate. We will not collect more data."](#e5e-rechazo)
+- [Acknowledge the concern and report a power analysis and confidence intervals](#e5e-evidencia)
+
+### Dismissive {#e5e-rechazo .final .mal}
+A refusal without evidence will probably lead to rejection and does not address the reviewer's intent: they are worried about precision.
+
+### Evidence {#e5e-evidencia}
+The analysis shows that small effects cannot be ruled out. What do you add?
+
+- [Nothing more: the analysis is enough](#e5e-nada)
+- [A clear limitation in the Methods and more cautious conclusions](#e5e-limitacion)
+
+### Partial {#e5e-nada .final .regular}
+Better, but the text still claims more than the data support.
+
+### Complete response {#e5e-limitacion .final .bien}
+You respond to the intent (precision), report evidence, state the limitation within the methodology and calibrate the conclusions (chapter 3). The editor can now judge the paper fairly.
+:::
+
+## Assignment {#reto-e5}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Challenge for chapter 5 · The full cycle
+1. Write a cover letter for one of your manuscripts (or a fictitious one).
+2. Write a one-page peer review of a published preprint in your field.
+3. Using a real or invented set of three reviewer comments, write a complete response letter following Noble (2017).
+
+**Submission:** use the [assignment template](plantillas/entrega_reto.qmd). This challenge **has no solution in the book**.
+:::
+
+## Self-assessment
+
+Answer all the questions and press **Show answers**. It does not count towards your grade.
+
+::: {.webex-check .webex-box}
+1. A cover letter should repeat the abstract. {{< torf false >}}
+2. According to Noble (2017), you should respond to {{< mcq "only the main comments" "*every comment" "only the comments you agree with" >}}
+3. When a reviewer misunderstands, it often means the text was {{< fitb "unclear" ignorecase=true >}}
+4. "I write you to ask…" is correct English. {{< torf false >}}
+5. A good review criticises the work, not the {{< fitb "authors" "author" ignorecase=true >}}
+6. A self-contained response quotes the changed text with page and line numbers. {{< torf true >}}
+7. "I look forward to hearing from you" replaces the calque {{< mcq "*Waiting for your answer" "Best regards" "Dear Sir" >}}
+8. What should you do when you disagree with a reviewer?
+
+{{< longmcq "Ignore the comment" "*Explain respectfully with evidence and reasons" "Complain to the editor" >}}
+:::
+
+::: {.webex-solution boton="Show explanations"}
+- What, why this journal, formal statements.
+- Quote each comment in full.
+- Accept the blame and clarify.
+- "I am writing to ask…"
+- Specific and kind.
+- The editor should not have to search.
+- A common calque from Spanish.
+- "We respectfully disagree, because…"
+:::

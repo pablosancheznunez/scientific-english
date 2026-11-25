@@ -1,0 +1,115 @@
+---
+engine: markdown
+---
+
+# Glossary {#sec-glosario}
+
+Terms in the book, by chapter.
+
+## The architecture of a research article
+
+### IMRaD {#gl-imrad}
+Introduction, Methods, Results and Discussion: the standard structure of research articles. → [Chapter 1](01-structure.qmd)
+
+### Rhetorical move {#gl-move}
+A unit of text with a specific communicative purpose, such as showing a gap. → [Chapter 1](01-structure.qmd)
+
+### CARS model {#gl-cars}
+Swales's Create a Research Space model of introductions: territory, niche, occupation. → [Chapter 1](01-structure.qmd)
+
+### Research gap {#gl-gap}
+What is not yet known or resolved, which the study addresses. → [Chapter 1](01-structure.qmd)
+
+### Structured abstract {#gl-abstract}
+An abstract with labelled parts: background, methods, results and conclusions. → [Chapter 1](01-structure.qmd)
+
+### Context-content-conclusion {#gl-ccc}
+Scheme for papers, sections and paragraphs recommended by Mensh and Kording (2017). → [Chapter 1](01-structure.qmd)
+
+## Clear sentences
+
+### Readability {#gl-readability}
+How easy a text is to read, often estimated with formulas such as Flesch Reading Ease. → [Chapter 2](02-clarity.qmd)
+
+### Topic position {#gl-topic}
+The beginning of a sentence, which should hold old, linking information. → [Chapter 2](02-clarity.qmd)
+
+### Stress position {#gl-stress}
+The end of a sentence, which should hold new, important information. → [Chapter 2](02-clarity.qmd)
+
+### Nominalisation {#gl-nominal}
+A verb or adjective turned into a noun (analyse → analysis), often making sentences heavier. → [Chapter 2](02-clarity.qmd)
+
+### Passive voice {#gl-passive}
+Construction in which the subject receives the action (samples were stored). → [Chapter 2](02-clarity.qmd)
+
+### Plain language {#gl-plain}
+Clear, direct writing that the intended reader can understand on first reading. → [Chapter 2](02-clarity.qmd)
+
+## Hedging and stance
+
+### Hedge {#gl-hedge}
+Word or phrase that softens a claim (may, suggest, possibly). → [Chapter 3](03-stance.qmd)
+
+### Booster {#gl-booster}
+Word or phrase that strengthens a claim (clearly, demonstrate). → [Chapter 3](03-stance.qmd)
+
+### Stance {#gl-stance}
+The writer's attitude towards claims and sources. → [Chapter 3](03-stance.qmd)
+
+### Overclaiming {#gl-overclaim}
+Stating more than the evidence supports, for example causal claims from correlations. → [Chapter 3](03-stance.qmd)
+
+### Reporting verb {#gl-reporting}
+Verb used to report sources (show, suggest, claim), which conveys stance. → [Chapter 3](03-stance.qmd)
+
+## Common errors
+
+### False friend {#gl-falsefriend}
+Word that looks similar in two languages but has a different meaning. → [Chapter 4](04-errors.qmd)
+
+### Uncountable noun {#gl-uncountable}
+Noun with no plural form (research, evidence, information). → [Chapter 4](04-errors.qmd)
+
+### Academic Word List {#gl-awl}
+Coxhead's list of 570 word families frequent across academic disciplines. → [Chapter 4](04-errors.qmd)
+
+### Collocation {#gl-collocation}
+Words that habitually go together (conduct a study, draw a conclusion). → [Chapter 4](04-errors.qmd)
+
+### Calque {#gl-calque}
+Literal translation of an expression from another language (make a research). → [Chapter 4](04-errors.qmd)
+
+## Peer review and correspondence
+
+### Cover letter {#gl-cover}
+Short letter to the editor that accompanies a submission. → [Chapter 5](05-review.qmd)
+
+### Response to reviewers {#gl-response}
+Document that answers each reviewer comment and explains the changes. → [Chapter 5](05-review.qmd)
+
+### Major and minor revision {#gl-revision}
+Editorial decisions asking for substantial or small changes before acceptance. → [Chapter 5](05-review.qmd)
+
+### Politeness strategies {#gl-politeness}
+Linguistic choices that soften requests and criticism. → [Chapter 5](05-review.qmd)
+
+### Rebuttal {#gl-rebuttal}
+Reasoned disagreement with a reviewer's comment, supported by evidence. → [Chapter 5](05-review.qmd)
+
+## Presenting and networking
+
+### Signposting {#gl-signposting}
+Phrases that tell the audience where they are in a talk. → [Chapter 6](06-presenting.qmd)
+
+### Word stress {#gl-wordstress}
+The syllable pronounced with more force in a word (aNALysis). → [Chapter 6](06-presenting.qmd)
+
+### Elevator pitch {#gl-pitch}
+A 30-second summary of who you are and what you research. → [Chapter 6](06-presenting.qmd)
+
+### Clarification request {#gl-clarification}
+A phrase used to check you have understood a question. → [Chapter 6](06-presenting.qmd)
+
+### Linguistic inequality {#gl-inequality}
+The extra costs that the dominance of English imposes on non-native speakers in science. → [Chapter 6](06-presenting.qmd)

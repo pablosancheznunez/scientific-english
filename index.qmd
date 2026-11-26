@@ -4,7 +4,7 @@ engine: markdown
 
 # Preface {.unnumbered}
 
-English is the main language of international research. For most researchers in the world it is a second (or third) language, and writing, reviewing and presenting in it takes extra time and effort. Amano et al. (2023) surveyed researchers in environmental sciences from many countries and found that non-native speakers spend substantially more time reading, writing and preparing presentations in English, and are more likely to have papers rejected or sent back for revision because of the language. This is a structural inequality of the research system, not a personal failing. This book cannot remove it, but it can make the work faster and the results clearer.
+English is the main language of international research. For most researchers in the world it is a second (or third) language, and writing, reviewing and presenting in it takes extra time and effort. @amano2023 surveyed researchers in environmental sciences from many countries and found that non-native speakers spend substantially more time reading, writing and preparing presentations in English, and are more likely to have papers rejected or sent back for revision because of the language. This is a structural inequality of the research system, not a personal failing. This book cannot remove it, but it can make the work faster and the results clearer.
 
 It is written for doctoral students and researchers in any field, with particular attention to the difficulties of Spanish speakers. It does not teach general English: it focuses on the genres researchers need (articles, abstracts, reviews, cover letters, emails, talks) and on the evidence about what makes scientific texts clear.
 
@@ -21,7 +21,7 @@ Text licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ### Further reading {.unnumbered}
 
-- Amano, T.; Ramírez-Castañeda, V.; Berdejo-Espinola, V.; Borokini, I.; Chowdhury, S.; Golivets, M. et al. (2023). [The manifold costs of being a non-native English speaker in science](https://doi.org/10.1371/journal.pbio.3002184). *PLOS Biology*, 21(7), e3002184.
+- @amano2023
 
 ## Map of the book
 

@@ -57,6 +57,10 @@ filters:
 - webex
 - interactivos
 - glosario.lua
+bibliography: referencias.bib
+csl: apa.csl
+link-citations: true
+citations-hover: true
 format:
   html:
     theme:

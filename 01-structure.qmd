@@ -29,7 +29,7 @@ Mensh, B.; Kording, K. (2017). [Ten simple rules for structuring papers](https:/
 
 ## 1. One paper, one message
 
-Mensh and Kording (2017) start with the most important rule: **focus your paper on a single central contribution**, which you can state in the title. Everything else serves that message. If you cannot write it in one sentence, the paper is not ready to be written.
+@mensh2017 start with the most important rule: **focus your paper on a single central contribution**, which you can state in the title. Everything else serves that message. If you cannot write it in one sentence, the paper is not ready to be written.
 
 They also recommend writing for the **naive human reader**: someone intelligent but outside your sub-field, who reads quickly and remembers little. Short sentences, defined terms and a logical flow help experts too.
 
@@ -131,7 +131,7 @@ Check that each part answers its question (why, what, how, what was found, so wh
 Answer all the questions and press **Show answers**. It does not count towards your grade.
 
 ::: {.webex-check .webex-box}
-1. According to Mensh and Kording (2017), a paper should focus on {{< mcq "as many contributions as possible" "*a single central contribution" "the methods" >}}
+1. According to @mensh2017, a paper should focus on {{< mcq "as many contributions as possible" "*a single central contribution" "the methods" >}}
 2. In the CARS model, showing a gap in the literature is "establishing a {{< fitb "niche" ignorecase=true >}}"
 3. The Methods section is usually written in the past tense. {{< torf true >}}
 4. A good abstract should include the main results with numbers. {{< torf true >}}

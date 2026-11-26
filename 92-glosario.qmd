@@ -24,7 +24,7 @@ What is not yet known or resolved, which the study addresses. → [Chapter 1](01
 An abstract with labelled parts: background, methods, results and conclusions. → [Chapter 1](01-structure.qmd)
 
 ### Context-content-conclusion {#gl-ccc}
-Scheme for papers, sections and paragraphs recommended by Mensh and Kording (2017). → [Chapter 1](01-structure.qmd)
+Scheme for papers, sections and paragraphs recommended by @mensh2017. → [Chapter 1](01-structure.qmd)
 
 ## Clear sentences
 

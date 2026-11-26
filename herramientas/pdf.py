@@ -114,6 +114,13 @@ for ext in ("webex", "interactivos", "libro-pdf"):
     shutil.copytree(RAIZ / "_extensions" / ext, BUILD / "_extensions" / ext)
 if (RAIZ / "figuras").exists():
     shutil.copytree(RAIZ / "figuras", BUILD / "figuras")
+if (RAIZ / "referencias.bib").exists():
+    for _f in ("referencias.bib", "apa.csl"):
+        shutil.copy(RAIZ / _f, BUILD / _f)
+    cabecera["bibliography"] = "referencias.bib"
+    cabecera["csl"] = "apa.csl"
+    _en = (RAIZ / "libro.yml").exists() and "idioma: en" in (RAIZ / "libro.yml").read_text()
+    doc += "\n\n# " + ("References" if _en else "Referencias") + " {.unnumbered}\n\n::: {#refs}\n:::\n"
 (BUILD / "_quarto.yml").write_text("project:\n  type: default\n")
 (BUILD / "libro.qmd").write_text("---\n" + yaml.safe_dump(cabecera, allow_unicode=True, sort_keys=False) + "---\n\n" + doc)
 

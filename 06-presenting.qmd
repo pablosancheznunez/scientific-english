@@ -29,7 +29,7 @@ Amano, T.; Ramírez-Castañeda, V.; Berdejo-Espinola, V.; Borokini, I.; Chowdhur
 
 ## 1. Speaking at conferences as a non-native speaker
 
-Amano et al. (2023) found that non-native English speakers reported spending more time preparing oral presentations and that many avoided attending or presenting at international conferences because of language. Knowing this is useful in two ways: preparation pays off, and the difficulty is shared by most of your audience. International audiences value **clarity** far more than a native accent.
+@amano2023 found that non-native English speakers reported spending more time preparing oral presentations and that many avoided attending or presenting at international conferences because of language. Knowing this is useful in two ways: preparation pays off, and the difficulty is shared by most of your audience. International audiences value **clarity** far more than a native accent.
 
 ## 2. Signposting
 
@@ -130,7 +130,7 @@ Check that every section has an explicit transition, that the main message is st
 Answer all the questions and press **Show answers**. It does not count towards your grade.
 
 ::: {.webex-check .webex-box}
-1. Amano et al. (2023) found that non-native speakers spend more time preparing presentations. {{< torf true >}}
+1. @amano2023 found that non-native speakers spend more time preparing presentations. {{< torf true >}}
 2. Phrases that tell the audience where they are in the talk are called {{< fitb "signposting" ignorecase=true >}}
 3. For intelligibility, the most important feature is {{< mcq "a native accent" "*word and sentence stress" "speaking fast" >}}
 4. "Analysis" is stressed on the {{< mcq "first" "*second" "third" >}} syllable

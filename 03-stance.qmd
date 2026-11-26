@@ -29,7 +29,7 @@ Hyland, K. (1996). [Writing without conviction? Hedging in science research arti
 
 ## 1. Why researchers hedge
 
-Hyland (1996) analysed hedging in research articles in cell and molecular biology and showed that it is not a sign of weakness but a central feature of scientific argument. **Hedges** (*may, might, suggest, possibly, appear to, likely*) do two jobs: they state claims **accurately**, matching them to the evidence, and they show **respect for the reader** and the community, leaving room for disagreement. **Boosters** (*clearly, demonstrate, undoubtedly, it is well known that*) do the opposite: they express certainty.
+@hyland1996 analysed hedging in research articles in cell and molecular biology and showed that it is not a sign of weakness but a central feature of scientific argument. **Hedges** (*may, might, suggest, possibly, appear to, likely*) do two jobs: they state claims **accurately**, matching them to the evidence, and they show **respect for the reader** and the community, leaving room for disagreement. **Boosters** (*clearly, demonstrate, undoubtedly, it is well known that*) do the opposite: they express certainty.
 
 Good scientific writing calibrates: strong evidence, strong verbs; weak or indirect evidence, cautious verbs.
 
@@ -146,7 +146,7 @@ Identify the design of each piece of evidence (experimental, observational, repl
 Answer all the questions and press **Show answers**. It does not count towards your grade.
 
 ::: {.webex-check .webex-box}
-1. Hyland (1996) argues that hedging is a sign of weak writing. {{< torf false >}}
+1. @hyland1996 argues that hedging is a sign of weak writing. {{< torf false >}}
 2. Words that express certainty, such as "clearly", are called {{< fitb "boosters" "booster" ignorecase=true >}}
 3. For a correlational study, the best verb is {{< mcq "causes" "*is associated with" "proves" >}}
 4. "Smith (2020) claims that…" expresses a {{< mcq "positive" "*distant or critical" "neutral" >}} stance

@@ -47,7 +47,7 @@ A useful review has a clear structure: a **summary** of the paper's claims (to s
 
 ## 3. Responding to reviewers
 
-Noble (2017) offers rules that turn a stressful task into a manageable one. The most important:
+@noble2017 offers rules that turn a stressful task into a manageable one. The most important:
 
 - **Provide an overview**, then respond to **every point**, quoting each comment in full.
 - **Be polite and respectful** to all reviewers, even when they are wrong.
@@ -91,7 +91,7 @@ Each response: thanks or acknowledgement, what was done, where.
 **Advanced.** Write a complete response letter to the reviews of one of your papers (or to an invented set of five comments).
 
 ::: {.webex-solution boton="Show solution"}
-Follow Noble (2017): overview, every comment quoted, polite responses, changes with page and line numbers, and reasoned disagreement where appropriate.
+Follow @noble2017: overview, every comment quoted, polite responses, changes with page and line numbers, and reasoned disagreement where appropriate.
 :::
 
 
@@ -142,7 +142,7 @@ You respond to the intent (precision), report evidence, state the limitation wit
 ## Challenge for chapter 5 · The full cycle
 1. Write a cover letter for one of your manuscripts (or a fictitious one).
 2. Write a one-page peer review of a published preprint in your field.
-3. Using a real or invented set of three reviewer comments, write a complete response letter following Noble (2017).
+3. Using a real or invented set of three reviewer comments, write a complete response letter following @noble2017.
 
 **Submission:** use the [assignment template](plantillas/entrega_reto.qmd). This challenge **has no solution in the book**.
 :::
@@ -153,7 +153,7 @@ Answer all the questions and press **Show answers**. It does not count towards y
 
 ::: {.webex-check .webex-box}
 1. A cover letter should repeat the abstract. {{< torf false >}}
-2. According to Noble (2017), you should respond to {{< mcq "only the main comments" "*every comment" "only the comments you agree with" >}}
+2. According to @noble2017, you should respond to {{< mcq "only the main comments" "*every comment" "only the comments you agree with" >}}
 3. When a reviewer misunderstands, it often means the text was {{< fitb "unclear" ignorecase=true >}}
 4. "I write you to ask…" is correct English. {{< torf false >}}
 5. A good review criticises the work, not the {{< fitb "authors" "author" ignorecase=true >}}

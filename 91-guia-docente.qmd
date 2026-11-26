@@ -23,9 +23,13 @@ Labs: readability checker, hedge and booster highlighter, and Spanglish detector
 ## Recommendations
 
 - Work with the students' own texts as early as possible.
-- Normalise the difficulty: most researchers are non-native speakers (Amano et al., 2023), and clarity matters more than accent.
+- Normalise the difficulty: most researchers are non-native speakers [@amano2023], and clarity matters more than accent.
 - Discuss the responsible use of language tools and AI assistants, and the journals' disclosure policies.
 
 ## Moodle and slides
 
-The questions are exported to **Moodle XML** in `moodle/`. Slides for each chapter are in [diapositivas/](diapositivas/index.html){target="_blank"}.
+The questions are exported to **Moodle XML** (*Question bank → Import → Moodle XML format*); each question keeps its explanation as general feedback.
+
+**Download the question bank:** [whole book](moodle/autoevaluacion_todo.xml) · by chapter: [01](moodle/autoevaluacion_01_structure.xml) · [02](moodle/autoevaluacion_02_clarity.xml) · [03](moodle/autoevaluacion_03_stance.xml) · [04](moodle/autoevaluacion_04_errors.xml) · [05](moodle/autoevaluacion_05_review.xml) · [06](moodle/autoevaluacion_06_presenting.xml)
+
+ Slides for each chapter are in [diapositivas/](diapositivas/index.html){target="_blank"}.

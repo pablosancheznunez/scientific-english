@@ -67,7 +67,7 @@ These nouns have **no plural** and do not take *a/an*: **research, evidence, inf
 
 ## 4. Academic vocabulary
 
-Coxhead (2000) compiled the **Academic Word List** (AWL): 570 word families that are frequent across academic disciplines but not in general English (*analyse, approach, assess, concept, data, establish, factor, interpret, method, significant…*). Together they made up around 10% of the words in her corpus of academic texts. Learning them, with their typical **collocations** (*conduct a study, draw a conclusion, raise a question, address a gap*), pays off more than learning rare technical terms.
+@coxhead2000 compiled the **Academic Word List** (AWL): 570 word families that are frequent across academic disciplines but not in general English (*analyse, approach, assess, concept, data, establish, factor, interpret, method, significant…*). Together they made up around 10% of the words in her corpus of academic texts. Learning them, with their typical **collocations** (*conduct a study, draw a conclusion, raise a question, address a gap*), pays off more than learning rare technical terms.
 
 ## Lab: Spanglish detector {#lab-e4-spanglish}
 
@@ -181,7 +181,7 @@ Answer all the questions and press **Show answers**. It does not count towards y
 - And "consist of".
 - Decimal point, thousands comma.
 - Or "carry out".
-- Coxhead (2000).
+- @coxhead2000.
 - English adjectives have no plural.
 - 570 word families, about 10% of her corpus.
 :::

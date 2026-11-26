@@ -44,14 +44,43 @@ def bloque(texto, clase):
     m = re.search(r"::: \{[^}]*\." + clase + r"[^}]*\}\n(.*?)\n:::", texto, re.S)
     return m.group(1) if m else ""
 
+def _citas():
+    """Clave BibTeX -> «Apellido (año)» para las citas Pandoc de las explicaciones."""
+    bib = RAIZ / "referencias.bib"
+    tabla = {}
+    if bib.exists():
+        for m in re.finditer(r"@\w+\{(\w+),(.*?)\n\}", bib.read_text(), re.S):
+            a = re.search(r"author = \{(.*)\},?\n", m.group(2))
+            y = re.search(r"year = \{(\d{4})\}", m.group(2))
+            if not a:
+                continue
+            ns = [n.split(",")[0].strip("{} ") for n in a.group(1).split(" and ")]
+            otros = "others" in ns
+            ns = [n for n in ns if n != "others"]
+            et = " et al." if otros or len(ns) > 2 else ""
+            y_ = " and " if "idioma: en" in ((RAIZ / "libro.yml").read_text() if (RAIZ / "libro.yml").exists() else "") else " y "
+            nom = ns[0] + et if et else y_.join(ns)
+            tabla[m.group(1)] = (nom, y.group(1) if y else "s. f.")
+    return tabla
+
+CITAS = None
+
+def sin_citas(t):
+    global CITAS
+    if CITAS is None:
+        CITAS = _citas()
+    t = re.sub(r"\[@(\w+)\]", lambda m: f"({CITAS[m.group(1)][0]}, {CITAS[m.group(1)][1]})" if m.group(1) in CITAS else m.group(0), t)
+    return re.sub(r"@(\w+)", lambda m: f"{CITAS[m.group(1)][0]} ({CITAS[m.group(1)][1]})" if m.group(1) in CITAS else m.group(0), t)
+
 def preguntas(qmd):
     s = (RAIZ / qmd).read_text()
     caja = bloque(s, "webex-check")
-    expl = [l[2:].strip() for l in bloque(s, "webex-solution").splitlines() if l.startswith("- ")]
+    tras = s[s.find(caja) + len(caja):] if caja else s
+    expl = [sin_citas(l[2:].strip()) for l in bloque(tras, "webex-solution").splitlines() if l.startswith("- ")]
     items = []
     for linea in caja.splitlines():
         if re.match(r"^\d+\.\s", linea):
-            items.append(re.sub(r"^\d+\.\s", "", linea))
+            items.append(sin_citas(re.sub(r"^\d+\.\s", "", linea)))
         elif linea.strip().startswith("{{< longmcq") and items:
             items[-1] += " " + linea.strip()
     return items, expl

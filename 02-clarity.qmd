@@ -29,7 +29,7 @@ Plavén-Sigray, P.; Matheson, G. J.; Schiffler, B. C.; Thompson, W. H. (2017). [
 
 ## 1. Scientific texts are getting harder to read
 
-Plavén-Sigray et al. (2017) analysed more than 700,000 abstracts from biomedical and life-science journals published between 1881 and 2015. Readability, measured with standard formulas, **decreased steadily**, partly because of more general scientific jargon ("robust", "underlying", "novel") and longer sentences. Hard-to-read texts reduce the reach and the reproducibility of research: a method that cannot be understood cannot be repeated.
+@plavensigray2017 analysed more than 700,000 abstracts from biomedical and life-science journals published between 1881 and 2015. Readability, measured with standard formulas, **decreased steadily**, partly because of more general scientific jargon ("robust", "underlying", "novel") and longer sentences. Hard-to-read texts reduce the reach and the reproducibility of research: a method that cannot be understood cannot be repeated.
 
 ## 2. Readers' expectations
 
@@ -157,7 +157,7 @@ Report the word count and the score before and after, and explain each change. C
 Answer all the questions and press **Show answers**. It does not count towards your grade.
 
 ::: {.webex-check .webex-box}
-1. Plavén-Sigray et al. (2017) found that the readability of scientific abstracts has {{< mcq "increased" "*decreased" "not changed" >}} over time
+1. @plavensigray2017 found that the readability of scientific abstracts has {{< mcq "increased" "*decreased" "not changed" >}} over time
 2. New, important information should go in the {{< fitb "stress" ignorecase=true >}} position at the end of the sentence
 3. "We performed an analysis of the data" contains a nominalisation. {{< torf true >}}
 4. The passive voice should never be used in scientific writing. {{< torf false >}}
